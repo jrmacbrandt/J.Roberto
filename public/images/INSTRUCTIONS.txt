@@ -1,0 +1,14 @@
+Upload your images here!
+- willy wonka logo.png
+- man.jpg
+- about.jpg
+- portfolio-first.jpg
+- portfolio-second.jpg
+- portfolio-third.jpg
+- portfolio-fourth.jpg
+- post-one.jpg
+- post-two.jpg
+- post-three.jpg
+- post-four.jpg
+- post-five.jpg
+- post-six.jpg
