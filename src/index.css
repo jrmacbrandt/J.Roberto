@@ -19,12 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide custom cursor on touch devices */
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
+
 
 .color {
   color: var(--primary);
@@ -38,28 +33,7 @@ body {
   border-color: var(--primary);
 }
 
-/* Custom Cursor */
-.cursor {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--primary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-}
 
-.cursor-follower {
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease;
-}
 
 /* Loader */
 #loader {

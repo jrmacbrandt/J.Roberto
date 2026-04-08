@@ -31,40 +31,7 @@ function cn(...inputs: ClassValue[]) {
 
 // --- Components ---
 
-const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [followerPosition, setFollowerPosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setTimeout(() => {
-        setFollowerPosition({ x: e.clientX, y: e.clientY });
-      }, 50);
-    };
-    
-    // Check if it's a touch device
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (!isTouchDevice) {
-      window.addEventListener('mousemove', onMouseMove);
-    }
-    
-    return () => window.removeEventListener('mousemove', onMouseMove);
-  }, []);
-
-  return (
-    <>
-      <div 
-        className="cursor" 
-        style={{ left: position.x - 10, top: position.y - 10 }} 
-      />
-      <div 
-        className="cursor-follower" 
-        style={{ left: followerPosition.x - 4, top: followerPosition.y - 4 }} 
-      />
-    </>
-  );
-};
 
 const ColorChanger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -575,7 +542,7 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <CustomCursor />
+
           <ColorChanger />
           <Navigation setActiveSection={setActiveSection} />
           
