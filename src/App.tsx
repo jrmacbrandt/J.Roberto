@@ -205,11 +205,11 @@ const Header = () => {
         </div>
       </div>
         
-      <div className="header-image absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 w-[85%] sm:w-[70%] md:w-[35%] opacity-40 md:opacity-90 pointer-events-none select-none z-10 transition-all duration-1000">
+      <div className="header-image absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 w-[85%] sm:w-[70%] md:w-[35%] opacity-40 md:opacity-90 pointer-events-auto select-none z-10 transition-all duration-1000">
         <img 
           src="/profile.png" 
           alt="J. Roberto Brandt" 
-          className="w-full h-full object-cover object-top grayscale brightness-110 contrast-125"
+          className="w-full h-full object-cover object-top grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 brightness-110 contrast-125 cursor-pointer"
         />
       </div>
     </section>
