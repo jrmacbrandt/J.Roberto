@@ -344,10 +344,17 @@ const About = () => {
 
         <div id="skills">
           <div className="skills-header text-4xl font-bold mb-12 uppercase">
-            Minhas <span className="color">Habilidades</span>
+            Resultados para o <span className="color">seu negócio</span>
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
-            {skills.map((skill) => (
+            {[
+              { name: 'Mais clientes online', level: 95 },
+              { name: 'Atendimento automatizado', level: 90 },
+              { name: 'Organização do seu negócio', level: 87 },
+              { name: 'Presença profissional', level: 93 },
+              { name: 'Facilidade de uso', level: 94 },
+              { name: 'Integração com WhatsApp', level: 100 },
+            ].map((skill) => (
               <div key={skill.name} className="skill-item">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm font-bold uppercase tracking-widest">{skill.name}</span>
