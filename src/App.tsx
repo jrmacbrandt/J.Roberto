@@ -195,7 +195,7 @@ const Header = () => {
   }), []);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-start justify-center overflow-hidden pt-36 md:pt-48 pb-12">
+    <section id="home" className="relative min-h-screen w-full flex items-start justify-center overflow-hidden pt-24 md:pt-48 pb-12">
       {init && (
         <Particles
           id="tsparticles"
@@ -205,31 +205,42 @@ const Header = () => {
       )}
       
       {/* Container Principal do Hero */}
-      <div className="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-[80vh] md:min-h-screen relative">
+      <div className="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-screen md:min-h-[80vh] relative">
         
         {/* Lado Esquerdo: Textos e Botões */}
-        <div className="md:col-span-8 text-center md:text-left z-20 space-y-8 mt-24 md:mt-0">
-          <div className="header-content">
+        <div className="md:col-span-8 text-center md:text-left z-20 space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
+          <div className="header-content order-1 md:order-none">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
               Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
             </h1>
+          </div>
+
+          {/* Imagem de Perfil (Ordem 2 no Mobile, Lado Direito no Desktop) */}
+          <div className="w-full max-w-[280px] sm:max-w-md mx-auto order-2 md:hidden">
+            <img 
+              src="/profile.png" 
+              alt="J. Roberto Brandt" 
+              className="w-full h-full object-cover object-top grayscale"
+            />
+          </div>
+
+          <div className="header-content order-3 md:order-none">
             <p className="secondline text-base sm:text-lg md:text-2xl font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
               Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
             </p>
-          </div>
-          
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start pointer-events-auto">
-            <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-5 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-2xl rounded-sm text-sm md:text-base">
-              Quero mais clientes
-            </a>
-            <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-10 py-5 border-2 border-white/20 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-xl rounded-sm text-sm md:text-base">
-              Ver soluções
-            </a>
+            <div className="flex flex-wrap gap-6 justify-center md:justify-start pointer-events-auto">
+              <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-5 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-2xl rounded-sm text-sm md:text-base">
+                Quero mais clientes
+              </a>
+              <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-10 py-5 border-2 border-white/20 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-xl rounded-sm text-sm md:text-base">
+                Ver soluções
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Lado Direito: Imagem de Perfil */}
-        <div className="md:col-span-4 mt-8 md:mt-0 md:absolute md:bottom-0 md:right-0 w-full md:w-[42%] pointer-events-none select-none z-10 transition-all duration-1000 translate-y-12 md:translate-y-40">
+        {/* Lado Direito: Imagem de Perfil (Apenas Desktop) */}
+        <div className="hidden md:block md:col-span-4 md:absolute md:bottom-0 md:right-0 w-full md:w-[42%] pointer-events-none select-none z-10 transition-all duration-1000 translate-y-12 md:translate-y-40">
           <img 
             src="/profile.png" 
             alt="J. Roberto Brandt" 
