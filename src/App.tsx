@@ -113,9 +113,12 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
       />
 
       <div id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000] bg-black/50 backdrop-blur-md">
-        <div className="logo text-xl md:text-2xl font-bold tracking-tighter flex items-center gap-2">
-          <div className="w-8 h-8 bg-color rounded-full flex items-center justify-center text-white text-xs">B</div>
-          <span className="color">J. Roberto</span> Brandt
+        <div className="logo h-12 md:h-16 flex items-center">
+          <img 
+            src="/logo.png" 
+            alt="J.R. Brandt" 
+            className="h-full w-auto object-contain brightness-0 invert" 
+          />
         </div>
 
         {/* Desktop Navigation Link */}
@@ -601,13 +604,17 @@ export default function App() {
   return (
     <div id="all" className="font-sans selection:bg-color selection:text-white bg-[#0a0a0a] min-h-screen">
       {loading ? (
-        <div id="loader" className="flex items-center justify-center bg-black text-white text-3xl md:text-4xl font-bold px-4 text-center">
+        <div id="loader" className="flex flex-col items-center justify-center bg-black text-white px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center gap-6"
           >
-            <span className="color">J. Roberto</span> Brandt
+            <img src="/logo.png" alt="Logo" className="h-20 md:h-32 w-auto brightness-0 invert" />
+            <div className="text-2xl md:text-3xl font-bold tracking-[0.3em] uppercase">
+              <span className="color">web</span>designer
+            </div>
           </motion.div>
         </div>
       ) : (
