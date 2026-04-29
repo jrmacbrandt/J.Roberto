@@ -201,7 +201,7 @@ const Header = () => {
         />
       )}
       
-      <div className="header-content z-20 text-center px-4 max-w-4xl mx-auto mt-[45vh] md:mt-0">
+      <div className="header-content z-20 text-center px-4 max-w-4xl mx-auto mt-[20vh] md:mt-[10vh]">
         <div className="firstline text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
           Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
         </div>
@@ -218,7 +218,7 @@ const Header = () => {
         </div>
       </div>
         
-      <div className="header-image absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 w-[85%] sm:w-[70%] md:w-[35%] opacity-40 md:opacity-90 pointer-events-auto select-none z-10 transition-all duration-1000">
+      <div className="header-image absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 w-[85%] sm:w-[70%] md:w-[35%] opacity-40 md:opacity-90 pointer-events-auto select-none z-10 transition-all duration-1000 translate-y-12 md:translate-y-20">
         <img 
           src="/profile.png" 
           alt="J. Roberto Brandt" 
