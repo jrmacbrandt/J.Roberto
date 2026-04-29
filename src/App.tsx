@@ -364,6 +364,7 @@ const About = () => {
               { name: 'Presença profissional', level: 93 },
               { name: 'Facilidade de uso', level: 94 },
               { name: 'Integração com WhatsApp', level: 100 },
+              { name: 'Resultados Orgânicos com SEO avançado', level: 100 },
             ].map((skill) => (
               <div key={skill.name} className="skill-item">
                 <div className="flex justify-between items-center mb-2">
