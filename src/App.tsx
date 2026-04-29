@@ -146,7 +146,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
 
       {/* Mobile Menu Overlay */}
       <div id="navigation-content" className={cn(isOpen && "active", "z-[2002]")}>
-        <div className="absolute top-6 right-6 cursor-pointer z-[2003]" onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}>
+        <div className="absolute top-6 right-6 cursor-pointer z-[3000] pointer-events-auto p-4" onClick={() => setIsOpen(false)}>
           <X className="text-white hover:color transition-colors" size={40} />
         </div>
         <div className="navigation-links flex flex-col items-center gap-8">
