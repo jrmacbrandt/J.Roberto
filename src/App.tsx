@@ -216,11 +216,11 @@ const Header = () => {
           </div>
 
           {/* Imagem de Perfil (Ordem 2 no Mobile, Lado Direito no Desktop) */}
-          <div className="w-full max-w-[280px] sm:max-w-md mx-auto order-2 md:hidden">
+          <div className="w-full mx-auto order-2 md:hidden">
             <img 
               src="/profile.png" 
               alt="J. Roberto Brandt" 
-              className="w-full h-full object-cover object-top grayscale"
+              className="w-full h-auto object-cover object-top grayscale"
             />
           </div>
 
