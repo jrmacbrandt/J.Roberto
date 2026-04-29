@@ -126,9 +126,9 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
         </div>
       </div>
 
-      <div id="navigation-content" className={cn(isOpen && "active")}>
-        <div className="absolute top-6 right-6 cursor-pointer" onClick={() => setIsOpen(false)}>
-          <X className="text-white" size={40} />
+      <div id="navigation-content" className={cn(isOpen && "active", "z-[2002]")}>
+        <div className="absolute top-6 right-6 cursor-pointer z-[2003]" onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}>
+          <X className="text-white hover:color transition-colors" size={40} />
         </div>
         <div className="navigation-links flex flex-col items-center gap-8">
           {links.map((link) => (
@@ -226,12 +226,12 @@ const About = () => {
   return (
     <section id="about" className="py-24 px-6 md:px-12 bg-[#0c0c0c]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-wrap justify-center md:justify-start gap-8 mb-16 border-b border-white/5 pb-12">
+        <div className="flex flex-wrap justify-center gap-8 mb-16 border-b border-white/5 pb-12">
           <div className="flex gap-6">
             <a href="mailto:jrmacbrandt@yahoo.com" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center">
               <Mail size={24} />
             </a>
-            <a href="tel:+5521980914107" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center">
+            <a href="https://wa.me/5521980914107" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center">
               <Phone size={24} />
             </a>
           </div>
@@ -286,7 +286,8 @@ const About = () => {
             {[
               { title: 'Mais Clientes', icon: <Globe size={40} />, desc: 'Mais clientes sem depender de plataformas.' },
               { title: 'Organização', icon: <Settings size={40} />, desc: 'Atendimento mais organizado.' },
-              { title: 'Imagem Profissional', icon: <User size={40} />, desc: 'Imagem profissional online.' },
+              { title: 'Transmita uma imagem profissional online', icon: <User size={40} />, desc: 'Transmita uma imagem profissional online.' },
+              { title: 'Integração', icon: <Code size={40} />, desc: 'Site e sistema integrados.' },
               { title: 'Facilidade', icon: <Lightbulb size={40} />, desc: 'Fácil de usar no dia a dia.' },
               { title: 'WhatsApp', icon: <Phone size={40} />, desc: 'Integração direta com WhatsApp.' },
             ].map((s, i) => (
@@ -301,7 +302,7 @@ const About = () => {
 
         {/* CTA Intermediary */}
         <div className="mt-20 text-center bg-[#151515] p-12 rounded-sm border border-white/5 shadow-xl">
-          <h3 className="text-3xl font-bold mb-6 uppercase tracking-tight">Quer um site como este para o seu <span className="color">negócio?</span></h3>
+          <h3 className="text-3xl font-bold mb-6 uppercase tracking-tight">Quer um site atrativo e automatizado para o seu <span className="color">negócio?</span></h3>
           <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
             Quero começar
           </a>
@@ -573,6 +574,20 @@ export default function App() {
             <Blog />
             <Contact />
           </main>
+
+          {/* Botão WhatsApp Fixo e Flutuante */}
+          <a
+            href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes"
+            target="_blank"
+            rel="noreferrer"
+            className="fixed bottom-8 right-8 z-[3000] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow"
+          >
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+              alt="WhatsApp" 
+              className="w-10 h-10 invert-0"
+            />
+          </a>
 
           <Footer />
         </motion.div>
