@@ -145,10 +145,14 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div id="navigation-content" className={cn(isOpen && "active", "z-[2002]")}>
-        <div className="absolute top-6 right-6 cursor-pointer z-[3000] pointer-events-auto p-4" onClick={() => setIsOpen(false)}>
-          <X className="text-white hover:color transition-colors" size={40} />
-        </div>
+      <div id="navigation-content" style={{ opacity: isOpen ? 1 : 0, visibility: isOpen ? 'visible' : 'hidden', transition: 'all 0.3s ease' }} className="fixed inset-0 bg-black z-[2002] flex items-center justify-center">
+        <button 
+          onClick={() => setIsOpen(false)}
+          className="absolute top-8 right-8 z-[3005] p-3 text-white bg-color rounded-full shadow-lg pointer-events-auto"
+          aria-label="Fechar menu"
+        >
+          <X size={32} />
+        </button>
         <div className="navigation-links flex flex-col items-center gap-8">
           {links.map((link) => (
             <button
