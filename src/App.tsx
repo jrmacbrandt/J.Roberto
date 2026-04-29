@@ -266,7 +266,7 @@ const About = () => {
           <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
             Conheça-me <span className="color">um pouco mais.</span>
           </p>
-          <div className="mt-6 text-xl md:text-2xl font-light uppercase tracking-widest">
+          <div className="mt-4 text-xl md:text-2xl font-light uppercase tracking-widest">
             Eu sou{' '}
             <span className="color font-bold">
               <Typewriter
@@ -282,8 +282,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
-          <div className="about-text">
+        <div className="flex flex-col lg:flex-row gap-16 items-start mb-24">
+          <div className="about-text flex-1">
             <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
               Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
             </h3>
@@ -296,8 +296,7 @@ const About = () => {
               </a>
             </div>
           </div>
-          <div className="about-img relative max-w-md mx-auto lg:max-w-none">
-            <div className="absolute -inset-4 border-2 border-color z-0 opacity-30"></div>
+          <div className="about-img relative flex-1 max-w-md mx-auto lg:max-w-none lg:mt-[-100px]">
             <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl">
               <img 
                 src="/about-profile.png" 
