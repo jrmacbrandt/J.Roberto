@@ -145,7 +145,13 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div id="navigation-content" style={{ opacity: isOpen ? 1 : 0, visibility: isOpen ? 'visible' : 'hidden', transition: 'all 0.3s ease' }} className="fixed inset-0 bg-black z-[2002] flex items-center justify-center">
+      <div 
+        id="navigation-content" 
+        className={cn(
+          "fixed inset-0 bg-black z-[2002] flex items-center justify-center transition-all duration-300",
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        )}
+      >
         <button 
           onClick={() => setIsOpen(false)}
           className="absolute top-8 right-8 z-[3005] p-3 text-white bg-color rounded-full shadow-lg pointer-events-auto"
@@ -158,7 +164,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
             <button
               key={link.id}
               onClick={() => handleLinkClick(link.id)}
-              className="text-4xl font-bold tracking-[0.2em] hover:color transition-colors duration-300"
+              className="text-4xl font-bold tracking-[0.2em] hover:text-color transition-colors duration-300"
             >
               {link.name}
             </button>
