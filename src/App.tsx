@@ -112,12 +112,27 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
         )} 
       />
 
-      <div id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000]">
+      <div id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000] bg-black/50 backdrop-blur-md">
         <div className="logo text-xl md:text-2xl font-bold tracking-tighter flex items-center gap-2">
           <div className="w-8 h-8 bg-color rounded-full flex items-center justify-center text-white text-xs">B</div>
           <span className="color">J. Roberto</span> Brandt
         </div>
-        <div className="menubar cursor-pointer" onClick={() => setIsOpen(true)}>
+
+        {/* Desktop Navigation Link */}
+        <nav className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => handleLinkClick(link.id)}
+              className="text-xs font-bold tracking-[0.2em] hover:color transition-colors duration-300"
+            >
+              {link.name}
+            </button>
+          ))}
+        </nav>
+
+        {/* Mobile Hamburger Button */}
+        <div className="md:hidden menubar cursor-pointer relative z-[1001]" onClick={() => setIsOpen(true)}>
           <div className="flex flex-col gap-1.5">
             <span className="w-8 h-0.5 bg-white"></span>
             <span className="w-8 h-0.5 bg-white"></span>
@@ -126,6 +141,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
       <div id="navigation-content" className={cn(isOpen && "active", "z-[2002]")}>
         <div className="absolute top-6 right-6 cursor-pointer z-[2003]" onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}>
           <X className="text-white hover:color transition-colors" size={40} />
