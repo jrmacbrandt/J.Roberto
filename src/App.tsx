@@ -282,8 +282,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-          <div className="about-text order-2 lg:order-1">
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
+          <div className="about-text">
             <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
               Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
             </h3>
@@ -296,7 +296,7 @@ const About = () => {
               </a>
             </div>
           </div>
-          <div className="about-img relative order-1 lg:order-2 max-w-md mx-auto lg:max-w-none">
+          <div className="about-img relative max-w-md mx-auto lg:max-w-none">
             <div className="absolute -inset-4 border-2 border-color z-0 opacity-30"></div>
             <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl">
               <img 
