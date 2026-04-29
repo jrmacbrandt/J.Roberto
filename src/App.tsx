@@ -201,29 +201,39 @@ const Header = () => {
         />
       )}
       
-      <div className="header-content z-20 text-center px-4 max-w-4xl mx-auto mt-[20vh] md:mt-[10vh]">
-        <div className="firstline text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
-          Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
-        </div>
-        <div className="secondline text-sm sm:text-lg md:text-xl font-light uppercase mb-10 max-w-2xl mx-auto opacity-80">
-          Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
-        </div>
-        <div className="flex flex-wrap gap-4 justify-center relative z-20 pointer-events-auto">
-          <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-8 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg rounded-sm text-sm">
-            Quero mais clientes
-          </a>
-          <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-8 py-4 border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-lg rounded-sm text-sm">
-            Ver soluções
-          </a>
-        </div>
-      </div>
+      {/* Container Principal do Hero */}
+      <div className="z-20 w-full max-w-7xl mx-auto px-4 flex flex-col md:block">
         
-      <div className="header-image absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 w-[85%] sm:w-[70%] md:w-[35%] opacity-40 md:opacity-90 pointer-events-auto select-none z-10 transition-all duration-1000 translate-y-12 md:translate-y-20">
-        <img 
-          src="/profile.png" 
-          alt="J. Roberto Brandt" 
-          className="w-full h-full object-cover object-top grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 brightness-110 contrast-125 cursor-pointer"
-        />
+        {/* Título (Sempre no Topo) */}
+        <div className="header-content text-center mt-24 md:mt-[10vh] max-w-4xl mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:w-full">
+          <div className="firstline text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
+            Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
+          </div>
+        </div>
+
+        {/* Imagem de Perfil (No meio no Mobile, Direita no Desktop) */}
+        <div className="relative mt-8 md:mt-0 md:absolute md:bottom-0 md:right-0 w-[85%] sm:w-[70%] md:w-[35%] mx-auto opacity-90 pointer-events-auto select-none z-10 transition-all duration-1000 md:translate-y-20">
+          <img 
+            src="/profile.png" 
+            alt="J. Roberto Brandt" 
+            className="w-full h-full object-cover object-top grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 brightness-110 contrast-125 cursor-pointer"
+          />
+        </div>
+
+        {/* Subtítulo e Botões (Embaixo no Mobile, Meio no Desktop) */}
+        <div className="header-content text-center mt-8 md:mt-[50vh] max-w-4xl mx-auto md:absolute md:left-1/2 md:-translate-x-1/2 md:w-full z-20">
+          <div className="secondline text-sm sm:text-lg md:text-xl font-light uppercase mb-10 max-w-2xl mx-auto opacity-80">
+            Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center relative z-20 pointer-events-auto">
+            <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-8 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg rounded-sm text-sm">
+              Quero mais clientes
+            </a>
+            <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-8 py-4 border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-lg rounded-sm text-sm">
+              Ver soluções
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
