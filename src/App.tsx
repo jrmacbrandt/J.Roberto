@@ -113,11 +113,11 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
       />
 
       <div id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000] bg-black/50 backdrop-blur-md">
-        <div className="logo h-12 md:h-16 flex items-center">
+        <div className="logo h-12 md:h-14 flex items-center overflow-hidden">
           <img 
             src="/logo.png" 
             alt="J.R. Brandt" 
-            className="h-full w-auto object-contain invert grayscale" 
+            className="h-full w-auto object-contain" 
           />
         </div>
 
@@ -611,7 +611,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center gap-6"
           >
-            <img src="/logo.png" alt="Logo" className="h-20 md:h-32 w-auto invert grayscale" />
+            <img src="/logo.png" alt="Logo" className="h-20 md:h-28 w-auto object-contain" />
             <div className="text-2xl md:text-3xl font-bold tracking-[0.3em] uppercase">
               <span className="color">web</span>designer
             </div>
