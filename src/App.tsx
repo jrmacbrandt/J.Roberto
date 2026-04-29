@@ -134,43 +134,44 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
           ))}
         </nav>
 
-        {/* Mobile Hamburger Button */}
-        <div className="md:hidden menubar cursor-pointer relative z-[1001]" onClick={() => setIsOpen(true)}>
-          <div className="flex flex-col gap-1.5">
-            <span className="w-8 h-0.5 bg-white"></span>
-            <span className="w-8 h-0.5 bg-white"></span>
-            <span className="w-8 h-0.5 bg-white"></span>
-          </div>
+      {/* Mobile Hamburger Button */}
+      <div 
+        className="md:hidden fixed top-6 right-6 z-[1001] cursor-pointer bg-black/50 p-2 rounded-md backdrop-blur-md border border-white/10" 
+        onClick={() => setIsOpen(true)}
+      >
+        <div className="flex flex-col gap-1.5">
+          <span className="w-6 h-0.5 bg-white"></span>
+          <span className="w-6 h-0.5 bg-white"></span>
+          <span className="w-6 h-0.5 bg-white"></span>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div 
-        id="navigation-content" 
-        className={cn(
-          "fixed inset-0 bg-black z-[2002] flex items-center justify-center transition-all duration-300",
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-        )}
-      >
-        <button 
-          onClick={() => setIsOpen(false)}
-          className="absolute top-8 right-8 z-[3005] p-3 text-white bg-color rounded-full shadow-lg pointer-events-auto"
-          aria-label="Fechar menu"
-        >
-          <X size={32} />
-        </button>
-        <div className="navigation-links flex flex-col items-center gap-8">
-          {links.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleLinkClick(link.id)}
-              className="text-4xl font-bold tracking-[0.2em] hover:text-color transition-colors duration-300"
-            >
-              {link.name}
-            </button>
-          ))}
+      {/* Mobile Menu Overlay - DEFINITIVE FIX */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center animate-in fade-in duration-300">
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 p-4 text-white hover:text-color transition-colors"
+          >
+            <X size={48} />
+          </button>
+          
+          <nav className="flex flex-col items-center gap-10">
+            {links.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => {
+                  setIsOpen(false);
+                  handleLinkClick(link.id);
+                }}
+                className="text-4xl font-bold uppercase tracking-widest hover:text-color transition-colors"
+              >
+                {link.name}
+              </button>
+            ))}
+          </nav>
         </div>
-      </div>
+      )}
     </>
   );
 };
