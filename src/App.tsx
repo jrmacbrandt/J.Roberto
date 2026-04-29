@@ -117,7 +117,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
           <img 
             src="/logo.png" 
             alt="J.R. Brandt" 
-            className="h-full w-auto object-contain brightness-0 invert" 
+            className="h-full w-auto object-contain invert grayscale" 
           />
         </div>
 
@@ -611,7 +611,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center gap-6"
           >
-            <img src="/logo.png" alt="Logo" className="h-20 md:h-32 w-auto brightness-0 invert" />
+            <img src="/logo.png" alt="Logo" className="h-20 md:h-32 w-auto invert grayscale" />
             <div className="text-2xl md:text-3xl font-bold tracking-[0.3em] uppercase">
               <span className="color">web</span>designer
             </div>
