@@ -79,7 +79,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
     { name: 'INÍCIO', id: 'home' },
     { name: 'SOBRE', id: 'about' },
     { name: 'BLOG', id: 'blog' },
-    { name: 'PORTFÓLIO', id: 'portfolio' },
+    { name: 'SOLUÇÕES', id: 'portfolio' },
     { name: 'CONTATO', id: 'contact' },
   ];
 
@@ -186,22 +186,19 @@ const Header = () => {
       )}
       
       <div className="header-content z-20 text-center px-4 max-w-4xl mx-auto mt-[45vh] md:mt-0">
-        <div className="firstline text-4xl sm:text-5xl md:text-7xl font-bold mb-4 leading-tight">
-          <span className="color">J. Roberto </span>Brandt
+        <div className="firstline text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
+          Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
         </div>
-        <div className="secondline text-xl sm:text-2xl md:text-4xl font-light tracking-widest uppercase">
-          Eu sou{' '}
-          <span className="color font-bold">
-            <Typewriter
-              words={['Designer.', 'Blogueiro.', 'Freelancer.']}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </span>
+        <div className="secondline text-sm sm:text-lg md:text-xl font-light uppercase mb-10 max-w-2xl mx-auto opacity-80">
+          Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center relative z-20 pointer-events-auto">
+          <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-8 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg rounded-sm text-sm">
+            Quero mais clientes
+          </a>
+          <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-8 py-4 border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-lg rounded-sm text-sm">
+            Ver soluções
+          </a>
         </div>
       </div>
         
@@ -258,15 +255,15 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="about-text order-2 lg:order-1">
             <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
-              Sou um <span className="color">desenvolvedor web</span> criativo baseado no Rio de Janeiro, Brasil
+              Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
             </h3>
             <p className="text-muted leading-relaxed mb-10 text-base md:text-lg">
-              Com 20 anos de experiência como desenvolvedor Web profissional, adquiri as habilidades e o conhecimento necessários para tornar seu projeto um sucesso. Aproveito cada etapa do trabalho.
+              Meu objetivo é entregar ferramentas que realmente gerem resultado, sem complexidade técnica.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-10 py-4 border-2 border-color text-white font-bold uppercase tracking-widest hover:bg-color transition-all duration-300 transform hover:-translate-y-1">
-                Baixar <span className="color">CV</span>
-              </button>
+              <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-4 border-2 border-color text-white font-bold uppercase tracking-widest hover:bg-color transition-all duration-300 transform hover:-translate-y-1 inline-block">
+                Falar no <span className="color">WhatsApp</span>
+              </a>
             </div>
           </div>
           <div className="about-img relative order-1 lg:order-2 max-w-md mx-auto lg:max-w-none">
@@ -283,13 +280,15 @@ const About = () => {
 
         <div id="services" className="mb-20">
           <div className="services-heading text-4xl font-bold mb-12 uppercase">
-            <span className="color">Meus</span> Serviços
+            Por que usar <span className="color">essas soluções?</span>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Web Design', icon: <Code size={40} />, desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quibusdam possimus' },
-              { title: 'Mídias Sociais', icon: <Globe size={40} />, desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quibusdam possimus' },
-              { title: 'Design Criativo', icon: <Lightbulb size={40} />, desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quibusdam possimus' },
+              { title: 'Mais Clientes', icon: <Globe size={40} />, desc: 'Mais clientes sem depender de plataformas.' },
+              { title: 'Organização', icon: <Settings size={40} />, desc: 'Atendimento mais organizado.' },
+              { title: 'Imagem Profissional', icon: <User size={40} />, desc: 'Imagem profissional online.' },
+              { title: 'Facilidade', icon: <Lightbulb size={40} />, desc: 'Fácil de usar no dia a dia.' },
+              { title: 'WhatsApp', icon: <Phone size={40} />, desc: 'Integração direta com WhatsApp.' },
             ].map((s, i) => (
               <div key={i} className="p-8 bg-[#151515] hover:-translate-y-2 transition-transform duration-300 group">
                 <div className="color mb-6 group-hover:scale-110 transition-transform">{s.icon}</div>
@@ -298,6 +297,14 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* CTA Intermediary */}
+        <div className="mt-20 text-center bg-[#151515] p-12 rounded-sm border border-white/5 shadow-xl">
+          <h3 className="text-3xl font-bold mb-6 uppercase tracking-tight">Quer um site como este para o seu <span className="color">negócio?</span></h3>
+          <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
+            Quero começar
+          </a>
         </div>
 
         <div id="skills">
@@ -331,10 +338,9 @@ const About = () => {
 
 const Portfolio = () => {
   const projects = [
-    { title: 'Ideia de App', category: 'App', img: 'https://picsum.photos/seed/p1/1200/800' },
-    { title: 'Web Design', category: 'Web', img: 'https://picsum.photos/seed/p2/1200/800' },
-    { title: 'Design de UI', category: 'UI', img: 'https://picsum.photos/seed/p3/1200/800' },
-    { title: 'Gráficos Incríveis', category: 'Graphics', img: 'https://picsum.photos/seed/p4/1200/800' },
+    { title: 'ImobiFlow', category: 'Imóveis', img: 'https://picsum.photos/seed/p1/1200/800', desc: 'Para corretores que querem ter seu próprio site e receber contatos diretos' },
+    { title: 'FastBeautyPro', category: 'Salões', img: 'https://picsum.photos/seed/p2/1200/800', desc: 'Para salões e barbearias que querem mais clientes e agendamentos automáticos' },
+    { title: 'Landing Page Otimizada', category: 'Vendas', img: 'https://picsum.photos/seed/p3/1200/800', desc: 'Página focada em conversão para pequenos negócios e prestadores de serviços' },
   ];
 
   return (
@@ -342,14 +348,14 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto">
         <div className="portfolio-header mb-20 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
-            Meu <span className="color">Portfólio</span>
+            Soluções para <span className="color">negócios</span>
           </h2>
           <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
-            Alguns dos meus <span className="color">Trabalhos</span>
+            Algumas das minhas <span className="color">Ferramentas</span>
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {projects.map((p, i) => (
             <div key={i} className="portfolio-card relative overflow-hidden group aspect-[16/10] rounded-sm shadow-lg">
               <img 
@@ -358,12 +364,13 @@ const Portfolio = () => {
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="portfolio-overlay bg-black/80 backdrop-blur-sm p-8 flex flex-col justify-center items-center text-center">
-                <h3 className="text-xl md:text-3xl font-bold mb-3 uppercase tracking-tight">{p.title}</h3>
-                <p className="text-xs md:text-sm color mb-8 uppercase tracking-[0.2em] font-semibold">{p.category}</p>
-                <button className="px-8 py-3 border border-color text-white text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold hover:bg-color transition-all duration-300">
-                  Ver Projeto
-                </button>
+              <div className="portfolio-overlay bg-black/80 backdrop-blur-sm p-6 lg:p-8 flex flex-col justify-center items-center text-center">
+                <h3 className="text-lg md:text-2xl font-bold mb-2 uppercase tracking-tight">{p.title}</h3>
+                <p className="text-[10px] md:text-xs color mb-4 uppercase tracking-[0.2em] font-semibold">{p.category}</p>
+                {p.desc && <p className="text-xs md:text-sm text-white/80 mb-6 max-w-[85%] leading-relaxed">{p.desc}</p>}
+                <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-6 py-3 border border-color text-white text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold hover:bg-color transition-all duration-300">
+                  Ver como funciona
+                </a>
               </div>
             </div>
           ))}
@@ -439,7 +446,10 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-20">
           <div className="contact-form">
             <h3 className="text-xl md:text-2xl font-bold mb-10 uppercase tracking-[0.3em] border-l-4 border-color pl-6">Mande uma Mensagem</h3>
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={(e) => {
+              e.preventDefault();
+              window.open("https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes", "_blank");
+            }}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <input 
                   type="text" 
@@ -454,40 +464,50 @@ const Contact = () => {
               </div>
               <input 
                 type="text" 
-                placeholder="Assunto" 
+                placeholder="Qual o seu negócio?" 
                 className="w-full bg-[#151515] border-b border-white/10 p-5 focus:border-color outline-none transition-all duration-300 focus:bg-[#1a1a1a]"
               />
               <textarea 
-                placeholder="Mensagem" 
+                placeholder="Como posso te ajudar a ter mais clientes?" 
                 rows={5}
                 className="w-full bg-[#151515] border-b border-white/10 p-5 focus:border-color outline-none transition-all duration-300 focus:bg-[#1a1a1a] resize-none"
               ></textarea>
-              <button className="w-full sm:w-auto px-12 py-4 bg-color text-white font-bold uppercase tracking-[0.3em] hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
+              <button type="submit" className="w-full sm:w-auto px-12 py-4 bg-color text-white font-bold uppercase tracking-[0.3em] hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
                 Enviar Mensagem
               </button>
             </form>
           </div>
 
-          <div className="contact-info">
-            <h3 className="text-xl md:text-2xl font-bold mb-10 uppercase tracking-[0.3em] border-l-4 border-color pl-6">Informações</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
-              {[
-                { icon: <User className="color" />, label: 'Nome', value: 'J. Roberto Brandt' },
-                { icon: <MapPin className="color" />, label: 'Localização', value: 'Rio de Janeiro/RJ - Brasil' },
-                { icon: <Phone className="color" />, label: 'Telefone', value: '+55 21 98091-4107' },
-                { icon: <Mail className="color" />, label: 'E-mail', value: 'jrmacbrandt@yahoo.com' },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-6 p-6 bg-[#151515] rounded-sm border border-white/5 hover:border-color/30 transition-colors group">
-                  <div className="p-4 bg-black rounded-sm group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                  <div>
-                    <h4 className="text-[10px] text-muted uppercase tracking-[0.3em] mb-1.5 font-bold">{item.label}</h4>
-                    <p className={cn(
-                      "text-[11px] md:text-[12px] font-medium normal-case",
-                      item.label === 'E-mail' && "lowercase"
-                    )}>{item.value}</p>
+          <div className="contact-info flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold mb-10 uppercase tracking-[0.3em] border-l-4 border-color pl-6">Informações</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
+                {[
+                  { icon: <User className="color" />, label: 'Nome', value: 'J. Roberto Brandt' },
+                  { icon: <MapPin className="color" />, label: 'Localização', value: 'Rio de Janeiro/RJ - Brasil' },
+                  { icon: <Phone className="color" />, label: 'Telefone/WhatsApp', value: '+55 21 98091-4107' },
+                  { icon: <Mail className="color" />, label: 'E-mail', value: 'jrmacbrandt@yahoo.com' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-6 p-6 bg-[#151515] rounded-sm border border-white/5 hover:border-color/30 transition-colors group">
+                    <div className="p-4 bg-black rounded-sm group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                    <div>
+                      <h4 className="text-[10px] text-muted uppercase tracking-[0.3em] mb-1.5 font-bold">{item.label}</h4>
+                      <p className={cn(
+                        "text-[11px] md:text-[12px] font-medium normal-case",
+                        item.label === 'E-mail' && "lowercase"
+                      )}>{item.value}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            
+            <div className="mt-12 bg-color/10 border border-color/30 p-8 rounded-sm text-center">
+              <h3 className="text-2xl font-bold mb-4">Pronto para ter mais clientes?</h3>
+              <p className="text-sm text-muted mb-6">Entre em contato agora e vamos conversar sobre a melhor solução para o seu negócio.</p>
+              <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="inline-block px-8 py-3 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg w-full sm:w-auto">
+                Falar no WhatsApp
+              </a>
             </div>
           </div>
         </div>
