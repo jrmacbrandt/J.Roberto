@@ -394,6 +394,7 @@ const Portfolio = () => {
     { title: 'ImobiFlow', category: 'Imóveis', img: 'https://picsum.photos/seed/p1/1200/800', desc: 'Para corretores que querem ter seu próprio site e receber contatos diretos' },
     { title: 'FastBeautyPro', category: 'Salões', img: 'https://picsum.photos/seed/p2/1200/800', desc: 'Para salões e barbearias que querem mais clientes e agendamentos automáticos' },
     { title: 'Landing Page Otimizada', category: 'Vendas', img: 'https://picsum.photos/seed/p3/1200/800', desc: 'Página focada em conversão para pequenos negócios e prestadores de serviços' },
+    { title: 'Site Institucional', category: 'Negócios', img: 'https://picsum.photos/seed/p4/1200/800', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
   ];
 
   return (
