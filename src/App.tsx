@@ -266,6 +266,20 @@ const About = () => {
           <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
             Conheça-me <span className="color">um pouco mais.</span>
           </p>
+          <div className="mt-6 text-xl md:text-2xl font-light uppercase tracking-widest">
+            Eu sou{' '}
+            <span className="color font-bold">
+              <Typewriter
+                words={['Designer.', 'Blogueiro.', 'Freelancer.']}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
