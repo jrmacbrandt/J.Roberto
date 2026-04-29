@@ -286,7 +286,7 @@ const About = () => {
             {[
               { title: 'Mais Clientes', icon: <Globe size={40} />, desc: 'Mais clientes sem depender de plataformas.' },
               { title: 'Organização', icon: <Settings size={40} />, desc: 'Atendimento mais organizado.' },
-              { title: 'Transmita uma imagem profissional online', icon: <User size={40} />, desc: 'Transmita uma imagem profissional online.' },
+              { title: 'Imagem Profissional', icon: <User size={40} />, desc: 'Transmita uma imagem profissional online.' },
               { title: 'Integração', icon: <Code size={40} />, desc: 'Site e sistema integrados.' },
               { title: 'Facilidade', icon: <Lightbulb size={40} />, desc: 'Fácil de usar no dia a dia.' },
               { title: 'WhatsApp', icon: <Phone size={40} />, desc: 'Integração direta com WhatsApp.' },
