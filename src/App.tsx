@@ -134,24 +134,25 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
           ))}
         </nav>
 
-      {/* Mobile Hamburger Button */}
-      <div 
-        className="md:hidden fixed top-6 right-6 z-[1001] cursor-pointer bg-black/50 p-2 rounded-md backdrop-blur-md border border-white/10" 
-        onClick={() => setIsOpen(true)}
-      >
-        <div className="flex flex-col gap-1.5">
-          <span className="w-6 h-0.5 bg-white"></span>
-          <span className="w-6 h-0.5 bg-white"></span>
-          <span className="w-6 h-0.5 bg-white"></span>
+        {/* Mobile Hamburger Button */}
+        <div 
+          className="md:hidden cursor-pointer z-[1001]" 
+          onClick={() => setIsOpen(true)}
+        >
+          <div className="flex flex-col gap-1.5">
+            <span className="w-8 h-0.5 bg-white"></span>
+            <span className="w-8 h-0.5 bg-white"></span>
+            <span className="w-8 h-0.5 bg-white"></span>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - DEFINITIVE FIX */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center animate-in fade-in duration-300">
+        <div className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center">
           <button 
             onClick={() => setIsOpen(false)}
-            className="absolute top-6 right-6 p-4 text-white hover:text-color transition-colors"
+            className="absolute top-6 right-6 p-4 text-white"
           >
             <X size={48} />
           </button>
