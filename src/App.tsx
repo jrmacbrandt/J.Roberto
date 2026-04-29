@@ -259,44 +259,49 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-header mb-20 text-center md:text-left">
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
-            Sobre <span className="color">Mim</span>
-          </h2>
-          <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
-            Conheça-me <span className="color">um pouco mais.</span>
-          </p>
-          <div className="mt-4 text-xl md:text-2xl font-light uppercase tracking-widest">
-            Eu sou{' '}
-            <span className="color font-bold">
-              <Typewriter
-                words={['Designer.', 'Blogueiro.', 'Freelancer.']}
-                loop={0}
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-          </div>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Coluna Esquerda: Conteúdo */}
+          <div className="about-content">
+            <div className="about-header mb-12 text-center md:text-left">
+              <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
+                Sobre <span className="color">Mim</span>
+              </h2>
+              <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
+                Conheça-me <span className="color">um pouco mais.</span>
+              </p>
+              <div className="mt-4 text-xl md:text-2xl font-light uppercase tracking-widest">
+                Eu sou{' '}
+                <span className="color font-bold">
+                  <Typewriter
+                    words={['Designer.', 'Blogueiro.', 'Freelancer.']}
+                    loop={0}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+                </span>
+              </div>
+            </div>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-start mb-24">
-          <div className="about-text flex-1">
-            <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
-              Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
-            </h3>
-            <p className="text-muted leading-relaxed mb-10 text-base md:text-lg">
-              Meu objetivo é entregar ferramentas que realmente gerem resultado, sem complexidade técnica.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-4 border-2 border-color text-white font-bold uppercase tracking-widest hover:bg-color transition-all duration-300 transform hover:-translate-y-1 inline-block">
-                Falar no <span className="color">WhatsApp</span>
-              </a>
+            <div className="about-text mt-12">
+              <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
+                Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
+              </h3>
+              <p className="text-muted leading-relaxed mb-10 text-base md:text-lg">
+                Meu objetivo é entregar ferramentas que realmente gerem resultado, sem complexidade técnica.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-4 border-2 border-color text-white font-bold uppercase tracking-widest hover:bg-color transition-all duration-300 transform hover:-translate-y-1 inline-block">
+                  Falar no <span className="color">WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div className="about-img relative flex-1 max-w-md mx-auto lg:max-w-none lg:mt-[-100px]">
+
+          {/* Coluna Direita: Foto Alinhada ao Topo */}
+          <div className="about-img relative max-w-md mx-auto lg:max-w-none w-full">
             <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl">
               <img 
                 src="/about-profile.png" 
