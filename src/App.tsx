@@ -195,7 +195,7 @@ const Header = () => {
   }), []);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-24 md:py-0">
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-32 md:py-0">
       {init && (
         <Particles
           id="tsparticles"
@@ -205,37 +205,36 @@ const Header = () => {
       )}
       
       {/* Container Principal do Hero */}
-      <div className="z-20 w-full max-w-7xl mx-auto px-4 flex flex-col items-center">
+      <div className="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-[80vh] md:min-h-screen relative">
         
-        {/* Título (Topo) */}
-        <div className="header-content text-center mb-8 md:absolute md:top-[15%] md:left-1/2 md:-translate-x-1/2 md:w-full">
-          <div className="firstline text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
-            Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
+        {/* Lado Esquerdo: Textos e Botões */}
+        <div className="md:col-span-8 text-center md:text-left z-20 space-y-8 mt-24 md:mt-0">
+          <div className="header-content">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
+              Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
+            </h1>
+            <p className="secondline text-base sm:text-lg md:text-2xl font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
+              Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
+            </p>
           </div>
-        </div>
-
-        {/* Imagem de Perfil */}
-        <div className="relative mb-8 md:mb-0 md:absolute md:bottom-0 md:right-0 w-[85%] sm:w-[70%] md:w-[35%] mx-auto opacity-90 pointer-events-auto select-none z-10 transition-all duration-1000 md:translate-y-20">
-          <img 
-            src="/profile.png" 
-            alt="J. Roberto Brandt" 
-            className="w-full h-full object-cover object-top grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-700 brightness-110 contrast-125 cursor-pointer"
-          />
-        </div>
-
-        {/* Subtítulo e Botões */}
-        <div className="header-content text-center md:absolute md:top-[55%] md:left-1/2 md:-translate-x-1/2 md:w-full z-20">
-          <div className="secondline text-sm sm:text-lg md:text-xl font-light uppercase mb-10 max-w-2xl mx-auto opacity-80">
-            Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
-          </div>
-          <div className="flex flex-wrap gap-4 justify-center relative z-20 pointer-events-auto">
-            <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-8 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg rounded-sm text-sm">
+          
+          <div className="flex flex-wrap gap-6 justify-center md:justify-start pointer-events-auto">
+            <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-5 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-2xl rounded-sm text-sm md:text-base">
               Quero mais clientes
             </a>
-            <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-8 py-4 border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-lg rounded-sm text-sm">
+            <a href="#portfolio" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }} className="px-10 py-5 border-2 border-white/20 text-white font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white transition-all shadow-xl rounded-sm text-sm md:text-base">
               Ver soluções
             </a>
           </div>
+        </div>
+
+        {/* Lado Direito: Imagem de Perfil */}
+        <div className="md:col-span-4 mt-8 md:mt-0 md:absolute md:bottom-0 md:right-0 w-full md:w-[42%] pointer-events-none select-none z-10 transition-all duration-1000 translate-y-12 md:translate-y-40">
+          <img 
+            src="/profile.png" 
+            alt="J. Roberto Brandt" 
+            className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 brightness-110 contrast-125"
+          />
         </div>
       </div>
     </section>
