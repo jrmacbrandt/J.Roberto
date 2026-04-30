@@ -320,6 +320,15 @@ const About = () => {
               </div>
             </div>
 
+            {/* Foto visível apenas no mobile, acima do texto */}
+            <div className="block lg:hidden my-8 rounded-sm overflow-hidden shadow-2xl">
+              <img 
+                src="/about-profile.png" 
+                alt="Sobre Mim" 
+                className="w-full object-cover grayscale brightness-110 contrast-105"
+              />
+            </div>
+
             <div className="about-text mt-12">
               <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
                 Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
@@ -335,8 +344,8 @@ const About = () => {
             </div>
           </div>
 
-          {/* Coluna Direita: Foto Alinhada à Base */}
-          <div className="about-img relative max-w-md mx-auto lg:max-w-none w-full">
+          {/* Coluna Direita: Foto Alinhada à Base (apenas Desktop) */}
+          <div className="about-img hidden lg:block relative max-w-md mx-auto lg:max-w-none w-full">
             <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl">
               <img 
                 src="/about-profile.png" 
