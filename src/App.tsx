@@ -220,7 +220,7 @@ const Header = () => {
       <div className="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-screen md:min-h-[80vh] relative">
         
         {/* Lado Esquerdo: Textos e Botões */}
-        <div className="md:col-span-8 text-center md:text-left z-20 space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
+        <div className="md:col-span-8 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
           <div className="header-content order-1 md:order-none">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
               Sou Webdesigner e crio <span className="color">sites e sistemas</span> que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
@@ -297,7 +297,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-end">
           {/* Coluna Esquerda: Conteúdo */}
           <div className="about-content">
-            <div className="about-header mb-12 text-center md:text-left">
+            <div className="about-header mb-4 md:mb-12 text-center md:text-left">
               <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
                 Sobre <span className="color">Mim</span>
               </h2>
@@ -321,7 +321,7 @@ const About = () => {
             </div>
 
             {/* Foto visível apenas no mobile, acima do texto */}
-            <div className="block lg:hidden my-8 rounded-sm overflow-hidden shadow-2xl">
+            <div className="block lg:hidden my-3 rounded-sm overflow-hidden shadow-2xl">
               <motion.img 
                 src="/about-profile.png" 
                 alt="Sobre Mim" 
