@@ -322,10 +322,14 @@ const About = () => {
 
             {/* Foto visível apenas no mobile, acima do texto */}
             <div className="block lg:hidden my-8 rounded-sm overflow-hidden shadow-2xl">
-              <img 
+              <motion.img 
                 src="/about-profile.png" 
                 alt="Sobre Mim" 
-                className="w-full object-cover grayscale brightness-110 contrast-105"
+                className="w-full object-cover brightness-110 contrast-105"
+                initial={{ filter: 'grayscale(100%)' }}
+                whileInView={{ filter: 'grayscale(0%)' }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                viewport={{ once: false, amount: 0.3 }}
               />
             </div>
 
