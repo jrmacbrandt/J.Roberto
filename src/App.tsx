@@ -347,7 +347,7 @@ const About = () => {
           </div>
         </div>
 
-        <div id="services" className="mb-20">
+        <div id="services" className="mt-24 mb-20">
           <div className="services-heading text-4xl font-bold mb-12 uppercase">
             Por que usar <span className="color">essas soluções?</span>
           </div>
