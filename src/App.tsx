@@ -252,7 +252,7 @@ const Header = () => {
         </div>
 
         {/* Lado Direito: Imagem de Perfil (Apenas Desktop) */}
-        <div className="hidden md:block md:col-span-4 md:absolute md:bottom-0 md:right-0 w-full md:w-[42%] pointer-events-none select-none z-10 transition-all duration-1000 translate-y-12 md:translate-y-40">
+        <div className="hidden md:block md:col-span-4 md:absolute md:bottom-0 md:right-0 w-full md:w-[42%] pointer-events-none select-none z-10">
           <img 
             src="/profile.png" 
             alt="J. Roberto Brandt" 
