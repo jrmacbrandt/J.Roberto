@@ -223,7 +223,7 @@ const Header = () => {
         <div className="md:col-span-8 text-center md:text-left z-20 space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
           <div className="header-content order-1 md:order-none">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
-              Crio sites e sistemas que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
+              Sou Webdesigner e crio <span className="color">sites e sistemas</span> que ajudam pequenos negócios a conseguir <span className="color">mais clientes</span>
             </h1>
           </div>
 
