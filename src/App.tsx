@@ -294,7 +294,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-end">
           {/* Coluna Esquerda: Conteúdo */}
           <div className="about-content">
             <div className="about-header mb-12 text-center md:text-left">
@@ -335,13 +335,13 @@ const About = () => {
             </div>
           </div>
 
-          {/* Coluna Direita: Foto Alinhada ao Topo */}
+          {/* Coluna Direita: Foto Alinhada à Base */}
           <div className="about-img relative max-w-md mx-auto lg:max-w-none w-full">
             <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl">
               <img 
                 src="/about-profile.png" 
                 alt="Sobre Mim" 
-                className="grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover aspect-[4/5] lg:aspect-auto brightness-110 contrast-105"
+                className="grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover brightness-110 contrast-105"
               />
             </div>
           </div>
