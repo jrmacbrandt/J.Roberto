@@ -207,7 +207,7 @@ const Header = () => {
   }), []);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-32 md:pt-40 pb-16 md:pb-24">
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-32 md:pt-40 pb-12 md:pb-16">
       {init && (
         <Particles
           id="tsparticles"
@@ -275,9 +275,9 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 px-6 md:px-12 bg-[#0c0c0c]">
+    <section id="about" className="py-12 md:py-16 px-6 md:px-12 bg-[#0c0c0c]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 mb-16 border-b border-white/5 pb-12">
+        <div className="flex flex-wrap justify-center gap-8 mb-10 border-b border-white/5 pb-12">
           <div className="flex gap-6">
             <a href="mailto:jrmacbrandt@yahoo.com" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center">
               <Mail size={24} />
@@ -360,7 +360,7 @@ const About = () => {
           </div>
         </div>
 
-        <div id="services" className="mt-20 md:mt-32 mb-16 md:mb-24">
+        <div id="services" className="mt-12 md:mt-20 mb-12 md:mb-16">
           <div className="services-heading text-4xl font-bold mb-12 uppercase">
             Por que usar <span className="color">essas soluções?</span>
           </div>
@@ -383,14 +383,14 @@ const About = () => {
         </div>
 
         {/* CTA Intermediary */}
-        <div className="mt-20 md:mt-32 text-center bg-[#151515] p-12 rounded-sm border border-white/5 shadow-xl">
+        <div className="mt-12 md:mt-20 text-center bg-[#151515] p-12 rounded-sm border border-white/5 shadow-xl">
           <h3 className="text-3xl font-bold mb-6 uppercase tracking-tight">Quer um site atrativo e automatizado para o seu <span className="color">negócio?</span></h3>
           <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
             Quero começar
           </a>
         </div>
 
-        <div id="skills" className="mt-20 md:mt-32">
+        <div id="skills" className="mt-12 md:mt-20">
           <div className="skills-header text-4xl font-bold mb-12 uppercase">
             Resultados para o <span className="color">seu negócio</span>
           </div>
@@ -436,7 +436,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-16 md:py-24 px-6 md:px-12 bg-[#0a0a0a]">
+    <section id="portfolio" className="py-12 md:py-16 px-6 md:px-12 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <div className="portfolio-header mb-20 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
@@ -499,7 +499,7 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-16 md:py-24 px-6 md:px-12 bg-[#0c0c0c]">
+    <section id="faq" className="py-12 md:py-16 px-6 md:px-12 bg-[#0c0c0c]">
       <div className="max-w-4xl mx-auto">
         <div className="faq-header mb-16 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
@@ -546,7 +546,7 @@ const FAQ = () => {
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 md:py-24 px-6 md:px-12 bg-[#0a0a0a]">
+    <section id="contact" className="py-12 md:py-16 px-6 md:px-12 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <div className="contact-header mb-20 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
