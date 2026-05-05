@@ -294,7 +294,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-end">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
           {/* Coluna Esquerda: Conteúdo */}
           <div className="about-content">
             <div className="about-header mb-4 md:mb-12 text-center md:text-left">
@@ -348,13 +348,13 @@ const About = () => {
             </div>
           </div>
 
-          {/* Coluna Direita: Foto Alinhada à Base (apenas Desktop) */}
-          <div className="about-img hidden lg:block relative max-w-md mx-auto lg:max-w-none w-full">
-            <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl">
+          {/* Coluna Direita: Foto Alinhada (apenas Desktop) */}
+          <div className="about-img hidden lg:block relative max-w-sm ml-auto w-full">
+            <div className="relative z-10 overflow-hidden rounded-sm shadow-2xl h-full">
               <img 
                 src="/about-profile.png" 
                 alt="Sobre Mim" 
-                className="grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover brightness-110 contrast-105"
+                className="grayscale hover:grayscale-0 transition-all duration-700 w-full h-full object-cover object-top brightness-110 contrast-105"
               />
             </div>
           </div>
