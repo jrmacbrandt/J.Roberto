@@ -222,11 +222,12 @@ const Header = () => {
         {/* Lado Esquerdo: Textos e Botões */}
         <div className="md:col-span-8 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
           <div className="header-content order-1 md:order-none">
-            <h1 className="text-[32px] sm:text-[42px] md:text-[60px] font-bold leading-[1.1] mb-6">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.1] mb-6">
               Sou Webdesigner e crio <br className="hidden md:block" />
-              <span className="color">sites e sistemas</span> que <br className="hidden md:block" />
-              ajudam pequenos negócios <br className="hidden md:block" />
-              a conseguirem <span className="color">mais clientes</span>
+              <span className="color">sites, sistemas e landing pages</span> que <br className="hidden md:block" />
+              ajudam empresas <br className="hidden md:block" />
+              a conseguirem <br className="hidden md:block" />
+              <span className="color">mais clientes</span>
             </h1>
           </div>
 
