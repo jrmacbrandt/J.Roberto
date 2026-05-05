@@ -220,10 +220,14 @@ const Header = () => {
       <div className="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-screen md:min-h-[80vh] relative">
         
         {/* Lado Esquerdo: Textos e Botões */}
-        <div className="md:col-span-8 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
+        <div className="md:col-span-10 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
           <div className="header-content order-1 md:order-none">
             <h1 className="text-[35px] sm:text-[47px] md:text-[71px] font-bold leading-[1.1] mb-6">
-              Sou Webdesigner e crio <span className="color">sites e sistemas</span> que ajudam pequenos negócios a conseguirem <span className="color">mais clientes</span>
+              Sou Webdesigner e <br className="hidden md:block" />
+              crio <span className="color">sites e sistemas</span> que <br className="hidden md:block" />
+              ajudam pequenos negócios <br className="hidden md:block" />
+              a conseguirem <br className="hidden md:block" />
+              <span className="color">mais clientes</span>
             </h1>
           </div>
 
