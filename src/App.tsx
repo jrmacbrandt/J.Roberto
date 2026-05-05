@@ -255,7 +255,7 @@ const Header = () => {
       </div>
 
       {/* Lado Direito: Imagem de Perfil (Apenas Desktop) - Alinhada à borda direita com 0 espaçamento */}
-      <div className="hidden md:block absolute bottom-0 right-0 w-[33%] pointer-events-none select-none z-10">
+      <div className="hidden md:block absolute bottom-0 right-0 w-[31%] pointer-events-none select-none z-10">
         <img 
           src="/profile.png" 
           alt="J. Roberto Brandt" 
@@ -290,9 +290,9 @@ const About = () => {
           </div>
           <div className="hidden md:block w-px h-12 bg-white/10"></div>
           <div className="flex gap-6">
-            <a href="#" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center"><Instagram size={24} /></a>
+            <a href="https://www.instagram.com/jrbrandt.webdesigner/" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center"><Instagram size={24} /></a>
             <a href="#" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center"><Facebook size={24} /></a>
-            <a href="#" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center"><Linkedin size={24} /></a>
+            <a href="https://www.linkedin.com/in/jos%C3%A9-roberto-machado-brandt-1a424460/" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center"><Linkedin size={24} /></a>
           </div>
         </div>
 
