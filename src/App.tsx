@@ -241,8 +241,8 @@ const Header = () => {
           </div>
 
           <div className="header-content order-3 md:order-none">
-            <p className="secondline text-base sm:text-lg md:text-2xl font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
-              Soluções simples para corretores, salões e negócios locais que querem crescer sem depender de plataformas
+            <p className="secondline text-[14px] sm:text-[16px] md:text-[22px] font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
+              soluções simples para corretores, salões e negócios locais que querem crescer com estrutura própria, sem depender somente de plataformas de terceiros ou redes sociais
             </p>
             <div className="flex flex-wrap gap-6 justify-center md:justify-start pointer-events-auto">
               <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-5 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-2xl rounded-sm text-sm md:text-base">
