@@ -253,14 +253,15 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Lado Direito: Imagem de Perfil (Apenas Desktop) */}
-        <div className="hidden md:flex md:col-span-4 h-full py-12 items-center justify-end z-10 pointer-events-none select-none">
-          <img 
-            src="/profile.png" 
-            alt="J. Roberto Brandt" 
-            className="h-full w-auto max-w-full object-contain object-bottom grayscale opacity-80"
-          />
-        </div>
+      </div>
+
+      {/* Lado Direito: Imagem de Perfil (Apenas Desktop) - Alinhada à borda direita com 0 espaçamento */}
+      <div className="hidden md:block absolute bottom-0 right-0 w-[48%] pointer-events-none select-none z-10">
+        <img 
+          src="/profile.png" 
+          alt="J. Roberto Brandt" 
+          className="w-full h-auto object-cover object-top grayscale opacity-80"
+        />
       </div>
     </section>
   );
