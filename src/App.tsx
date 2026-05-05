@@ -78,8 +78,8 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
   const links = [
     { name: 'INÍCIO', id: 'home' },
     { name: 'SOBRE', id: 'about' },
-    { name: 'BLOG', id: 'blog' },
     { name: 'SOLUÇÕES', id: 'portfolio' },
+    { name: 'FAQ', id: 'faq' },
     { name: 'CONTATO', id: 'contact' },
   ];
 
@@ -472,47 +472,69 @@ const Portfolio = () => {
   );
 };
 
-const Blog = () => {
-  const posts = [
-    { title: 'Harleys no Havaí', date: '8 Mai, 20', img: 'https://picsum.photos/seed/b1/800/600' },
-    { title: 'Chave para Produtividade', date: '16 Jan, 20', img: 'https://picsum.photos/seed/b2/800/600' },
-    { title: 'Viciado em Cafeína', date: '30 Nov, 19', img: 'https://picsum.photos/seed/b3/800/600' },
-    { title: 'Desenvolvimento Web', date: '6 Jul, 19', img: 'https://picsum.photos/seed/b4/800/600' },
-    { title: 'Trabalho Remoto', date: '1 Jun, 19', img: 'https://picsum.photos/seed/b5/800/600' },
-    { title: 'Viagem de Negócios', date: '28 Fev, 19', img: 'https://picsum.photos/seed/b6/800/600' },
+const FAQ = () => {
+  const faqs = [
+    { 
+      q: "Quanto custa para criar um site profissional?", 
+      a: "O investimento varia de acordo com as funcionalidades necessárias, mas meu foco é oferecer o melhor custo-benefício para que pequenos negócios possam crescer online sem custos astronômicos." 
+    },
+    { 
+      q: "Quanto tempo leva para o site ficar pronto?", 
+      a: "Geralmente o prazo de entrega fica entre 7 a 15 dias úteis, dependendo da complexidade do projeto e da agilidade no envio dos materiais básicos por parte do cliente." 
+    },
+    { 
+      q: "Meu site vai aparecer no Google?", 
+      a: "Sim! Todos os projetos que desenvolvo já saem com otimização SEO técnica básica para que seu negócio comece a ser indexado e encontrado por quem procura seus serviços na sua região." 
+    },
+    { 
+      q: "O site funciona bem no celular?", 
+      a: "Com certeza. Hoje, mais de 80% dos acessos vêm de smartphones. Por isso, utilizo a metodologia Mobile-First, garantindo que seu site seja rápido e bonito em qualquer tela." 
+    },
+    { 
+      q: "Vou conseguir receber contatos pelo WhatsApp?", 
+      a: "Sim, essa é uma das minhas especialidades. Integro botões flutuantes e chamadas para ação (CTAs) estratégicas que direcionam o cliente direto para o seu WhatsApp de atendimento." 
+    },
   ];
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
-    <section id="blog" className="py-24 px-6 md:px-12 bg-[#0c0c0c]">
-      <div className="max-w-7xl mx-auto">
-        <div className="blog-header mb-20 text-center md:text-left">
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">Blog</h2>
+    <section id="faq" className="py-24 px-6 md:px-12 bg-[#0c0c0c]">
+      <div className="max-w-4xl mx-auto">
+        <div className="faq-header mb-16 text-center md:text-left">
+          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
+            Perguntas <span className="color">Frequentes</span>
+          </h2>
           <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
-            Meus posts mais <span className="color">recentes.</span>
+            Tire suas <span className="color">Dúvidas</span>
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {posts.map((post, i) => (
-            <div key={i} className="blog-item bg-[#151515] group overflow-hidden rounded-sm shadow-xl border border-white/5">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={post.img} 
-                  alt={post.title} 
-                  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute bottom-4 left-4 bg-color px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg">
-                  {post.date}
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <div 
+              key={i} 
+              className="border border-white/5 bg-[#151515] rounded-sm overflow-hidden transition-all duration-300"
+            >
+              <button 
+                onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+                className="w-full p-6 text-left flex justify-between items-center group hover:bg-white/5 transition-colors"
+              >
+                <span className="text-sm md:text-lg font-bold uppercase tracking-wider group-hover:color transition-colors">
+                  {faq.q}
+                </span>
+                <span className={cn(
+                  "color transition-transform duration-300 text-2xl",
+                  activeIndex === i ? "rotate-45" : "rotate-0"
+                )}>+</span>
+              </button>
+              <div className={cn(
+                "overflow-hidden transition-all duration-300 ease-in-out",
+                activeIndex === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              )}>
+                <div className="p-6 pt-0 text-muted text-sm md:text-base leading-relaxed border-t border-white/5">
+                  {faq.a}
                 </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-lg md:text-xl font-bold mb-4 uppercase tracking-wider group-hover:color transition-colors leading-tight">
-                  {post.title}
-                </h3>
-                <p className="text-muted text-xs md:text-sm leading-relaxed line-clamp-3 opacity-80">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus alias dolore recusandae illum, corrupti quo veniam saepe aliquid!
-                </p>
               </div>
             </div>
           ))}
@@ -666,7 +688,7 @@ export default function App() {
             <Header />
             <About />
             <Portfolio />
-            <Blog />
+            <FAQ />
             <Contact />
           </main>
 
