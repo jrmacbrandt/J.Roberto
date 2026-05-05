@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { gsap } from 'gsap';
 import { 
   Instagram, 
   Facebook, 
@@ -256,7 +255,7 @@ const Header = () => {
       </div>
 
       {/* Lado Direito: Imagem de Perfil (Apenas Desktop) - Alinhada à borda direita com 0 espaçamento */}
-      <div className="hidden md:block absolute bottom-0 right-0 w-[41%] pointer-events-none select-none z-10">
+      <div className="hidden md:block absolute bottom-0 right-0 w-[38%] pointer-events-none select-none z-10">
         <img 
           src="/profile.png" 
           alt="J. Roberto Brandt" 
