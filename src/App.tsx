@@ -220,9 +220,9 @@ const Header = () => {
       <div className="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-screen md:min-h-[80vh] relative">
         
         {/* Lado Esquerdo: Textos e Botões */}
-        <div className="md:col-span-9 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
+        <div className="md:col-span-8 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
           <div className="header-content order-1 md:order-none">
-            <h1 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[54px] font-bold leading-[1.1] mb-6">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] font-bold leading-[1.1] mb-6">
               Sou Webdesigner e crio <br className="hidden md:block" />
               <span className="color">Sites, Sistemas e Landing Pages</span> <br className="hidden md:block" />
               que ajudam empresas a <br className="hidden md:block" />
@@ -255,7 +255,7 @@ const Header = () => {
         </div>
 
         {/* Lado Direito: Imagem de Perfil (Apenas Desktop) */}
-        <div className="hidden md:block md:col-span-4 md:absolute md:bottom-0 md:right-0 w-full md:w-[32%] pointer-events-none select-none z-10">
+        <div className="hidden md:block md:col-span-4 md:absolute md:bottom-0 md:right-0 w-full md:w-[46%] pointer-events-none select-none z-10">
           <img 
             src="/profile.png" 
             alt="J. Roberto Brandt" 
