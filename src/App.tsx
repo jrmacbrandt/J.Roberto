@@ -473,6 +473,47 @@ const Portfolio = () => {
   );
 };
 
+const LGPDBanner = () => {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const accepted = localStorage.getItem('lgpd_accepted');
+    if (!accepted) {
+      setShow(true);
+    }
+  }, []);
+
+  const handleAccept = () => {
+    localStorage.setItem('lgpd_accepted', 'true');
+    setShow(false);
+  };
+
+  if (!show) return null;
+
+  return (
+    <motion.div 
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className="fixed bottom-0 left-0 w-full z-[5000] p-4 md:p-6"
+    >
+      <div className="max-w-7xl mx-auto bg-[#1a1a1a] border border-white/10 p-6 md:p-8 rounded-sm shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
+        <div className="text-sm text-white/70 leading-relaxed text-center md:text-left max-w-3xl">
+          <p className="uppercase tracking-widest text-[10px] mb-2 color font-bold">Privacidade & LGPD</p>
+          <p className="text-xs md:text-sm">
+            Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/politica-de-privacidade.html" target="_blank" className="color underline hover:no-underline font-bold">Política de Privacidade</a> conforme a LGPD.
+          </p>
+        </div>
+        <button 
+          onClick={handleAccept}
+          className="px-10 py-3 bg-color text-white font-bold uppercase tracking-widest text-xs hover:brightness-110 transition-all shadow-lg cursor-pointer whitespace-nowrap"
+        >
+          Ok, entendi
+        </button>
+      </div>
+    </motion.div>
+  );
+};
+
 const FAQ = () => {
   const faqs = [
     { 
@@ -762,6 +803,7 @@ export default function App() {
           </a>
 
           <Footer />
+          <LGPDBanner />
         </motion.div>
       )}
     </div>
