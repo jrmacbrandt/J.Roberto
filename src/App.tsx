@@ -308,7 +308,7 @@ const About = () => {
               <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
                 Conheça-me <span className="color">um pouco mais.</span>
               </p>
-              <div className="mt-4 text-2xl md:text-4xl font-light uppercase tracking-widest">
+              <div className="mt-4 text-[15px] sm:text-xl md:text-4xl font-light uppercase tracking-widest whitespace-nowrap">
                 Eu sou{' '}
                 <span className="color font-bold">
                   <Typewriter
