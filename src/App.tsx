@@ -207,7 +207,7 @@ const Header = () => {
   }), []);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-start justify-center overflow-hidden pt-24 md:pt-48 pb-12">
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-32 md:pt-40 pb-20 md:pb-32">
       {init && (
         <Particles
           id="tsparticles"
@@ -275,7 +275,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 md:px-12 bg-[#0c0c0c]">
+    <section id="about" className="py-20 md:py-32 px-6 md:px-12 bg-[#0c0c0c]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-center gap-8 mb-16 border-b border-white/5 pb-12">
           <div className="flex gap-6">
@@ -436,7 +436,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 px-6 md:px-12 bg-[#0a0a0a]">
+    <section id="portfolio" className="py-20 md:py-32 px-6 md:px-12 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <div className="portfolio-header mb-20 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
@@ -499,7 +499,7 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-6 md:px-12 bg-[#0c0c0c]">
+    <section id="faq" className="py-20 md:py-32 px-6 md:px-12 bg-[#0c0c0c]">
       <div className="max-w-4xl mx-auto">
         <div className="faq-header mb-16 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
@@ -546,7 +546,7 @@ const FAQ = () => {
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 bg-[#0a0a0a]">
+    <section id="contact" className="py-20 md:py-32 px-6 md:px-12 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <div className="contact-header mb-20 text-center md:text-left">
           <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
