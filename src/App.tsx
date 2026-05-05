@@ -348,13 +348,13 @@ const About = () => {
             </div>
           </div>
 
-          {/* Coluna Direita: Foto Alinhada Proporcionalmente (apenas Desktop) */}
-          <div className="about-img hidden lg:block relative max-w-md ml-auto w-full">
-            <div className="relative z-10 overflow-hidden rounded-sm h-full">
+          {/* Coluna Direita: Foto Alinhada Perfeitamente (apenas Desktop) */}
+          <div className="about-img hidden lg:block relative ml-auto h-full">
+            <div className="relative z-10 overflow-hidden rounded-sm h-full flex justify-end">
               <img 
                 src="/about-profile.png" 
                 alt="Sobre Mim" 
-                className="grayscale hover:grayscale-0 transition-all duration-700 w-full h-full object-contain object-right brightness-110 contrast-105"
+                className="grayscale hover:grayscale-0 transition-all duration-700 h-full w-auto object-contain object-top brightness-110 contrast-105"
               />
             </div>
           </div>
