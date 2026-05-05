@@ -32,6 +32,14 @@ function cn(...inputs: ClassValue[]) {
 
 
 
+const navLinks = [
+  { name: 'INÍCIO', id: 'home' },
+  { name: 'SOBRE', id: 'about' },
+  { name: 'SOLUÇÕES', id: 'portfolio' },
+  { name: 'FAQ', id: 'faq' },
+  { name: 'CONTATO', id: 'contact' },
+];
+
 const ColorChanger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const colors = [
@@ -74,13 +82,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
   const [isOpen, setIsOpen] = useState(false);
   const [isBreakerActive, setIsBreakerActive] = useState(false);
 
-  const links = [
-    { name: 'INÍCIO', id: 'home' },
-    { name: 'SOBRE', id: 'about' },
-    { name: 'SOLUÇÕES', id: 'portfolio' },
-    { name: 'FAQ', id: 'faq' },
-    { name: 'CONTATO', id: 'contact' },
-  ];
+  const links = navLinks;
 
   const handleLinkClick = (id: string) => {
     setIsBreakerActive(true);
@@ -660,14 +662,16 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Navegação</h4>
             <div className="flex flex-col gap-2">
-              {['INÍCIO', 'SOBRE', 'SOLUÇÕES', 'FAQ', 'CONTATO'].map((item) => (
-                <a 
-                  key={item}
-                  href={`#${item.toLowerCase() === 'início' ? 'home' : item.toLowerCase()}`}
-                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest"
+              {navLinks.map((link) => (
+                <button 
+                  key={link.id}
+                  onClick={() => {
+                    document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-left"
                 >
-                  {item}
-                </a>
+                  {link.name}
+                </button>
               ))}
             </div>
           </div>
