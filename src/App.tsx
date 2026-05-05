@@ -237,7 +237,7 @@ const Header = () => {
               />
             </div>
             
-            <p className="secondline text-[14px] sm:text-[16px] md:text-[22px] font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
+            <p className="secondline text-[12px] sm:text-[14px] md:text-[20px] font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
               soluções simples para corretores, salões e negócios locais que querem crescer com estrutura própria, sem depender somente de plataformas de terceiros ou redes sociais
             </p>
             
