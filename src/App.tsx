@@ -222,7 +222,7 @@ const Header = () => {
         {/* Lado Esquerdo: Textos e Botões */}
         <div className="md:col-span-8 text-center md:text-left z-20 space-y-2 md:space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
           <div className="header-content order-1 md:order-none">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
+            <h1 className="text-[35px] sm:text-[47px] md:text-[71px] font-bold leading-[1.1] mb-6">
               Sou Webdesigner e crio <span className="color">sites e sistemas</span> que ajudam pequenos negócios a conseguirem <span className="color">mais clientes</span>
             </h1>
           </div>
