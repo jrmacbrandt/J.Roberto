@@ -231,7 +231,7 @@ const Header = () => {
             </h1>
           </div>
 
-          {/* Imagem de Perfil (Ordem 2 no Mobile, Lado Direito no Desktop) */}
+          {/* Imagem de Perfil (Ordem 2 no Mobile) */}
           <div className="w-full mx-auto order-2 md:hidden">
             <img 
               src="/profile.png" 
@@ -256,11 +256,11 @@ const Header = () => {
         </div>
 
         {/* Lado Direito: Imagem de Perfil (Apenas Desktop) */}
-        <div className="hidden md:block md:col-span-4 md:absolute md:bottom-0 md:right-0 w-full md:w-[42%] pointer-events-none select-none z-10">
+        <div className="hidden md:block md:absolute md:bottom-0 md:right-0 w-full md:w-[38%] pointer-events-none select-none z-10 h-[85%] flex items-end">
           <img 
             src="/profile.png" 
             alt="J. Roberto Brandt" 
-            className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 brightness-110 contrast-125"
+            className="w-full h-full object-contain object-bottom grayscale hover:grayscale-0 transition-all duration-700 brightness-110 contrast-125"
           />
         </div>
       </div>
