@@ -306,11 +306,11 @@ const About = () => {
               <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
                 Conheça-me <span className="color">um pouco mais.</span>
               </p>
-              <div className="mt-4 text-xl md:text-2xl font-light uppercase tracking-widest">
+              <div className="mt-4 text-2xl md:text-4xl font-light uppercase tracking-widest">
                 Eu sou{' '}
                 <span className="color font-bold">
                   <Typewriter
-                    words={['Designer.', 'Blogueiro.', 'Freelancer.']}
+                    words={['Webdesigner.', 'Desenvolvedor.', 'Freelancer.']}
                     loop={0}
                     cursor
                     cursorStyle="|"
@@ -336,15 +336,15 @@ const About = () => {
             </div>
 
             <div className="about-text mt-12">
-              <h3 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
-                Sou um <span className="color">desenvolvedor</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
+              <h3 className="text-xl md:text-2xl font-bold mb-8 leading-tight">
+                Sou um <span className="color">webdesigner</span> focado em criar soluções simples e eficientes para pequenos negócios aumentarem sua presença online e automatizarem processos do dia a dia.
               </h3>
               <p className="text-muted leading-relaxed mb-10 text-base md:text-lg">
                 Meu objetivo é entregar ferramentas que realmente gerem resultado, sem complexidade técnica.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-10 py-4 border-2 border-color text-white font-bold uppercase tracking-widest hover:bg-color transition-all duration-300 transform hover:-translate-y-1 inline-block">
-                  Falar no <span className="color">WhatsApp</span>
+                  Me chame no <span className="color">WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -386,7 +386,7 @@ const About = () => {
         <div className="mt-12 md:mt-20 text-center bg-[#151515] p-12 rounded-sm border border-white/5 shadow-xl">
           <h3 className="text-3xl font-bold mb-6 uppercase tracking-tight">Quer um site atrativo e automatizado para o seu <span className="color">negócio?</span></h3>
           <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
-            Quero começar
+            Quero começar agora
           </a>
         </div>
 
@@ -553,37 +553,53 @@ const Contact = () => {
             Contato
           </h2>
           <p className="text-muted text-xs md:text-sm mt-3 uppercase tracking-[0.4em]">
-            Entre em <span className="color">Contato.</span>
+            Fale agora <span className="color">comigo.</span>
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20">
           <div className="contact-form">
             <h3 className="text-xl md:text-2xl font-bold mb-10 uppercase tracking-[0.3em] border-l-4 border-color pl-6">Mande uma Mensagem</h3>
-            <form className="space-y-8" onSubmit={(e) => {
+            <form className="space-y-8" onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
               e.preventDefault();
-              window.open("https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes", "_blank");
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const business = formData.get('business');
+              const message = formData.get('message');
+              
+              const subject = encodeURIComponent(`Novo Contato de ${name}`);
+              const body = encodeURIComponent(`Nome: ${name}\nE-mail: ${email}\nNegócio: ${business}\n\nMensagem:\n${message}`);
+              
+              window.location.href = `mailto:jrmacbrandt@yahoo.com?subject=${subject}&body=${body}`;
             }}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <input 
+                  name="name"
                   type="text" 
                   placeholder="Nome" 
+                  required
                   className="w-full bg-[#151515] border-b border-white/10 p-5 focus:border-color outline-none transition-all duration-300 focus:bg-[#1a1a1a]"
                 />
                 <input 
+                  name="email"
                   type="email" 
                   placeholder="E-mail" 
+                  required
                   className="w-full bg-[#151515] border-b border-white/10 p-5 focus:border-color outline-none transition-all duration-300 focus:bg-[#1a1a1a]"
                 />
               </div>
               <input 
+                name="business"
                 type="text" 
                 placeholder="Qual o seu negócio?" 
                 className="w-full bg-[#151515] border-b border-white/10 p-5 focus:border-color outline-none transition-all duration-300 focus:bg-[#1a1a1a]"
               />
               <textarea 
+                name="message"
                 placeholder="Como posso te ajudar a ter mais clientes?" 
                 rows={5}
+                required
                 className="w-full bg-[#151515] border-b border-white/10 p-5 focus:border-color outline-none transition-all duration-300 focus:bg-[#1a1a1a] resize-none"
               ></textarea>
               <button type="submit" className="w-full sm:w-auto px-12 py-4 bg-color text-white font-bold uppercase tracking-[0.3em] hover:brightness-110 transition-all shadow-lg transform hover:-translate-y-1">
@@ -618,9 +634,9 @@ const Contact = () => {
             
             <div className="mt-12 bg-color/10 border border-color/30 p-8 rounded-sm text-center">
               <h3 className="text-2xl font-bold mb-4">Pronto para ter mais clientes?</h3>
-              <p className="text-sm text-muted mb-6">Entre em contato agora e vamos conversar sobre a melhor solução para o seu negócio.</p>
+              <p className="text-sm text-muted mb-6">Fale agora comigo e vamos conversar sobre a melhor solução para o seu negócio.</p>
               <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="inline-block px-8 py-3 bg-color text-white font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg w-full sm:w-auto">
-                Falar no WhatsApp
+                Me chame no WhatsApp
               </a>
             </div>
           </div>
@@ -632,12 +648,48 @@ const Contact = () => {
 
 const Footer = () => {
   return (
-    <footer className="py-10 border-t border-white/5 bg-[#0a0a0a] text-center">
-      <div className="flex items-center justify-center gap-2 text-xs text-muted uppercase tracking-widest">
-        <span>© 2026</span>
-        <Copyright size={14} className="color" />
-        <span className="color font-bold">J. Roberto Brandt</span>
-        <span>Todos os Direitos Reservados</span>
+    <footer className="py-16 border-t border-white/5 bg-[#0a0a0a]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <img src="/jrbrandt-assinatura-bg.png" alt="Logo" className="h-12 w-auto object-contain" />
+            <div className="text-lg font-bold tracking-widest uppercase">
+              <span className="color">web</span>designer
+            </div>
+          </div>
+          
+          <div className="flex flex-col gap-4">
+            <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Navegação</h4>
+            <div className="flex flex-col gap-2">
+              {['INÍCIO', 'SOBRE', 'SOLUÇÕES', 'FAQ', 'CONTATO'].map((item) => (
+                <a 
+                  key={item}
+                  href={`#${item.toLowerCase() === 'início' ? 'home' : item.toLowerCase()}`}
+                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Links Úteis</h4>
+            <div className="flex flex-col gap-2">
+              <a href="#" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest">Política de Privacidade</a>
+              <a href="#" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest">Sitemap</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-4 pt-8 border-t border-white/5">
+          <div className="flex items-center justify-center gap-2 text-[10px] text-muted uppercase tracking-[0.2em]">
+            <span>© 2026</span>
+            <Copyright size={12} className="color" />
+            <span className="color font-bold">J. Roberto Brandt</span>
+            <span>Todos os Direitos Reservados</span>
+          </div>
+        </div>
       </div>
     </footer>
   );
