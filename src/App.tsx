@@ -226,8 +226,7 @@ const Header = () => {
               Sou Webdesigner e crio <br className="hidden md:block" />
               <span className="color">sites e sistemas</span> que <br className="hidden md:block" />
               ajudam pequenos negócios <br className="hidden md:block" />
-              a conseguirem <br className="hidden md:block" />
-              <span className="color">mais clientes</span>
+              a conseguirem <span className="color">mais clientes</span>
             </h1>
           </div>
 
