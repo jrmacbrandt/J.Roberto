@@ -224,9 +224,9 @@ const Header = () => {
           <div className="header-content order-1 md:order-none">
             <h1 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[54px] font-bold leading-[1.1] mb-6">
               Sou Webdesigner e crio <br className="hidden md:block" />
-              <span className="color">sites, sistemas e landing pages</span> que <br className="hidden md:block" />
-              ajudam empresas a conseguirem <br className="hidden md:block" />
-              <span className="color">mais clientes</span>
+              <span className="color">Sites, Sistemas e Landing Pages</span> <br className="hidden md:block" />
+              que ajudam empresas a <br className="hidden md:block" />
+              conseguirem <span className="color">mais clientes</span>
             </h1>
           </div>
 
