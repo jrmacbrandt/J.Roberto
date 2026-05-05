@@ -207,7 +207,7 @@ const Header = () => {
   }), []);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-32 md:pt-40 pb-12 md:pb-16">
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 md:pt-28 pb-12 md:pb-16">
       {init && (
         <Particles
           id="tsparticles"
