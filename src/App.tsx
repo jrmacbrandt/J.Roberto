@@ -668,7 +668,7 @@ const Footer = () => {
                   onClick={() => {
                     document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-left"
+                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-left cursor-pointer"
                 >
                   {link.name}
                 </button>
@@ -679,8 +679,8 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Links Úteis</h4>
             <div className="flex flex-col gap-2">
-              <a href="#" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest">Política de Privacidade</a>
-              <a href="#" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest">Sitemap</a>
+              <a href="/politica-de-privacidade.html" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer">Política de Privacidade</a>
+              <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer">Sitemap</a>
             </div>
           </div>
         </div>
