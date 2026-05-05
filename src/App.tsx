@@ -255,13 +255,11 @@ const Header = () => {
         </div>
 
         {/* Lado Direito: Imagem de Perfil (Apenas Desktop) */}
-        <div className="hidden md:flex md:absolute top-32 bottom-0 right-0 w-full md:w-[55%] pointer-events-none select-none z-10 justify-end items-end">
-          <img 
-            src="/profile.png" 
-            alt="J. Roberto Brandt" 
-            className="h-full w-auto max-w-full object-contain object-right-bottom grayscale opacity-80"
-          />
-        </div>
+        <img 
+          src="/profile.png" 
+          alt="J. Roberto Brandt" 
+          className="hidden md:block absolute bottom-0 right-0 h-[calc(100vh-140px)] w-auto max-w-none object-cover object-top grayscale opacity-80 pointer-events-none select-none z-10"
+        />
       </div>
     </section>
   );
