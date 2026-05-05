@@ -431,8 +431,7 @@ const Portfolio = () => {
   const projects = [
     { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.jpg', link: 'https://imobiflow-peach.vercel.app/', desc: 'Para corretores que querem ter seu próprio site e receber contatos diretos' },
     { title: 'FastBeautyPro', category: 'Salões', img: '/images/fastbeautypro.jpg', link: 'https://fastbeautypro.vercel.app/', desc: 'Para salões e barbearias que querem mais clientes e agendamentos automáticos' },
-    { title: 'Landing Page Poço Artesiano', category: 'Serviços', img: '/images/poco-artesiano.jpg', link: 'https://www.pocoartesianorj.com.br/', desc: 'Página focada em conversão para empresas de perfuração e manutenção de poços' },
-    { title: 'Site Institucional', category: 'Negócios', img: 'https://picsum.photos/seed/p4/1200/800', link: '#', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
+    { title: 'Site Institucional Poço Artesiano', category: 'Institucional', img: '/images/poco-artesiano.jpg', link: 'https://www.pocoartesianorj.com.br/', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
   ];
 
   return (
