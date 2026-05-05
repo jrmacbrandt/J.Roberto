@@ -429,9 +429,9 @@ const About = () => {
 
 const Portfolio = () => {
   const projects = [
-    { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.jpg', link: 'https://imobiflow-peach.vercel.app/', desc: 'Para corretores que querem ter seu próprio site e receber contatos diretos' },
-    { title: 'FastBeautyPro', category: 'Salões', img: '/images/fastbeautypro.jpg', link: 'https://fastbeautypro.vercel.app/', desc: 'Para salões e barbearias que querem mais clientes e agendamentos automáticos' },
-    { title: 'Site Institucional Poço Artesiano', category: 'Institucional', img: '/images/poco-artesiano.jpg', link: 'https://www.pocoartesianorj.com.br/', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
+    { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.jpg', link: 'https://imobiflow-peach.vercel.app/', desc: 'Sistema com IA integrada, para corretores que querem ter seu próprio site e receber contatos diretos' },
+    { title: 'FastBeautyPro', category: 'Salões e Barbearias', img: '/images/fastbeautypro.jpg', link: 'https://fastbeautypro.vercel.app/', desc: 'Sistema de gestão para salões e barbearias que querem uma melhor gestão e agendamentos automáticos' },
+    { title: 'Site Institucional de Poços Artesianos', category: 'Institucional', img: '/images/poco-artesiano.jpg', link: 'https://www.pocoartesianorj.com.br/', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
   ];
 
   return (
