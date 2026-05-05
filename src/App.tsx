@@ -429,10 +429,10 @@ const About = () => {
 
 const Portfolio = () => {
   const projects = [
-    { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.jpg', desc: 'Para corretores que querem ter seu próprio site e receber contatos diretos' },
-    { title: 'FastBeautyPro', category: 'Salões', img: '/images/fastbeautypro.jpg', desc: 'Para salões e barbearias que querem mais clientes e agendamentos automáticos' },
-    { title: 'Landing Page Poço Artesiano', category: 'Serviços', img: '/images/poco-artesiano.jpg', desc: 'Página focada em conversão para empresas de perfuração e manutenção de poços' },
-    { title: 'Site Institucional', category: 'Negócios', img: 'https://picsum.photos/seed/p4/1200/800', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
+    { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.jpg', link: 'https://imobiflow-peach.vercel.app/', desc: 'Para corretores que querem ter seu próprio site e receber contatos diretos' },
+    { title: 'FastBeautyPro', category: 'Salões', img: '/images/fastbeautypro.jpg', link: 'https://fastbeautypro.vercel.app/', desc: 'Para salões e barbearias que querem mais clientes e agendamentos automáticos' },
+    { title: 'Landing Page Poço Artesiano', category: 'Serviços', img: '/images/poco-artesiano.jpg', link: 'https://www.pocoartesianorj.com.br/', desc: 'Página focada em conversão para empresas de perfuração e manutenção de poços' },
+    { title: 'Site Institucional', category: 'Negócios', img: 'https://picsum.photos/seed/p4/1200/800', link: '#', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
   ];
 
   return (
@@ -453,15 +453,15 @@ const Portfolio = () => {
               <img 
                 src={p.img} 
                 alt={p.title} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="portfolio-overlay bg-black/80 backdrop-blur-sm p-6 lg:p-8 flex flex-col justify-center items-center text-center">
                 <h3 className="text-lg md:text-2xl font-bold mb-2 uppercase tracking-tight">{p.title}</h3>
                 <p className="text-[10px] md:text-xs color mb-4 uppercase tracking-[0.2em] font-semibold">{p.category}</p>
                 {p.desc && <p className="text-xs md:text-sm text-white/80 mb-6 max-w-[85%] leading-relaxed">{p.desc}</p>}
-                <a href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes" target="_blank" rel="noreferrer" className="px-6 py-3 border border-color text-white text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold hover:bg-color transition-all duration-300">
-                  Ver como funciona
+                <a href={p.link} target="_blank" rel="noreferrer" className="px-6 py-3 border border-color text-white text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold hover:bg-color transition-all duration-300">
+                  Acessar online
                 </a>
               </div>
             </div>
