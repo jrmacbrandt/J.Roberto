@@ -669,9 +669,9 @@ const Contact = () => {
                   <div key={i} className="flex items-center gap-6 p-6 bg-[#151515] rounded-sm border border-white/5 hover:border-color/30 transition-colors group">
                     <div className="p-4 bg-black rounded-sm group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
                     <div>
-                      <h4 className="text-[10px] text-muted uppercase tracking-[0.3em] mb-1.5 font-bold">{item.label}</h4>
+                      <h4 className="text-[11px] text-muted uppercase tracking-[0.3em] mb-1.5 font-bold">{item.label}</h4>
                       <p className={cn(
-                        "text-[11px] md:text-[12px] font-medium normal-case",
+                        "text-[12px] md:text-[13px] font-medium normal-case",
                         item.label === 'E-mail' && "lowercase"
                       )}>{item.value}</p>
                     </div>
