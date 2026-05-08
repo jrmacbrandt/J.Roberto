@@ -698,7 +698,7 @@ const Footer = () => {
   return (
     <footer className="py-16 border-t border-white/5 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+        <div className="grid md:grid-cols-3 gap-12 mb-12 text-center">
           <div className="flex flex-col items-center gap-4">
             <img src="/favicon-source.png" alt="Favicon" className="w-[90px] h-[90px] rounded-full object-contain mb-2" />
             <img src="/jrbrandt-assinatura-bg.png" alt="Logo" className="h-12 w-auto object-contain" />
@@ -707,16 +707,16 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Navegação</h4>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               {navLinks.map((link) => (
                 <button 
                   key={link.id}
                   onClick={() => {
                     document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-left cursor-pointer"
+                  className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer text-center"
                 >
                   {link.name}
                 </button>
@@ -724,11 +724,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Links Úteis</h4>
-            <div className="flex flex-col gap-2">
-              <a href="/politica-de-privacidade.html" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer">Política de Privacidade</a>
-              <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer">Sitemap</a>
+            <div className="flex flex-col items-center gap-2">
+              <a href="/politica-de-privacidade.html" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer text-center">Política de Privacidade</a>
+              <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer text-center">Sitemap</a>
             </div>
           </div>
         </div>
