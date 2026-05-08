@@ -281,7 +281,12 @@ const About = () => {
   return (
     <section id="about" className="py-12 md:py-16 px-6 md:px-12 bg-[#0c0c0c]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 mb-10 border-b border-white/5 pb-12">
+        <div className="flex flex-wrap justify-center items-center gap-8 mb-10 border-b border-white/5 pb-12">
+          {/* Logo / Favicon */}
+          <div className="flex items-center justify-center hover:scale-110 transition-transform p-2 bg-white/5 rounded-full backdrop-blur-sm">
+            <img src="/favicon-source.png" alt="J. Roberto Brandt" className="w-10 h-10 rounded-full object-contain" />
+          </div>
+          <div className="hidden md:block w-px h-12 bg-white/10"></div>
           <div className="flex gap-6">
             <a href="mailto:jrmacbrandt@yahoo.com" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center">
               <Mail size={24} />
@@ -297,6 +302,7 @@ const About = () => {
             <a href="https://www.linkedin.com/in/jos%C3%A9-roberto-machado-brandt-1a424460/" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform color p-3 bg-white/5 rounded-full backdrop-blur-sm flex items-center justify-center"><Linkedin size={24} /></a>
           </div>
         </div>
+
 
         <div className="grid lg:grid-cols-2 gap-16 items-stretch">
           {/* Coluna Esquerda: Conteúdo */}
