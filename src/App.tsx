@@ -709,7 +709,7 @@ const Footer = () => {
           
           <div className="flex flex-col items-center gap-4">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Navegação</h4>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               {navLinks.map((link) => (
                 <button 
                   key={link.id}
@@ -726,11 +726,12 @@ const Footer = () => {
 
           <div className="flex flex-col items-center gap-4">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Links Úteis</h4>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <a href="/politica-de-privacidade.html" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer text-center">Política de Privacidade</a>
               <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest cursor-pointer text-center">Sitemap</a>
             </div>
           </div>
+
         </div>
 
         <div className="flex flex-col items-center gap-4 pt-8 border-t border-white/5">
