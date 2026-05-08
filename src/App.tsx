@@ -116,7 +116,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
       <div id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000] bg-black/50 backdrop-blur-md">
         <div className="logo h-12 md:h-14 flex items-center overflow-hidden">
           <img 
-            src="/jrbrandt-assinatura-bg.png" 
+            src="/jrbrandt-assinatura-bg.webp" 
             alt="J.R. Brandt" 
             className="h-full w-auto object-contain" 
           />
@@ -233,7 +233,7 @@ const Header = () => {
             {/* Imagem de Perfil (Ordem 2 no Mobile) */}
             <div className="w-full mx-auto order-2 md:hidden mb-8">
               <img 
-                src="/profile.png" 
+                src="/profile.webp" 
                 alt="J. Roberto Brandt" 
                 className="w-full h-auto object-cover object-top grayscale"
               />
@@ -259,7 +259,7 @@ const Header = () => {
       {/* Lado Direito: Imagem de Perfil (Apenas Desktop) - Alinhada à borda direita com 0 espaçamento */}
       <div className="hidden md:block absolute bottom-0 right-0 w-[31%] pointer-events-none select-none z-10">
         <img 
-          src="/profile.png" 
+          src="/profile.webp" 
           alt="J. Roberto Brandt" 
           className="w-full h-auto object-cover object-top grayscale opacity-80"
         />
@@ -284,7 +284,7 @@ const About = () => {
         <div className="flex flex-wrap justify-center items-center gap-8 mb-10 border-b border-white/5 pb-12">
           {/* Logo / Favicon */}
           <div className="flex items-center justify-center hover:scale-110 transition-transform p-2 bg-white/5 rounded-full backdrop-blur-sm">
-            <img src="/favicon-source.png" alt="J. Roberto Brandt" className="w-10 h-10 rounded-full object-contain" />
+            <img src="/favicon-source.webp" alt="J. Roberto Brandt" className="w-10 h-10 rounded-full object-contain" />
           </div>
           <div className="hidden md:block w-px h-12 bg-white/10"></div>
           <div className="flex gap-6">
@@ -333,7 +333,7 @@ const About = () => {
             {/* Foto visível apenas no mobile, acima do texto */}
             <div className="block lg:hidden my-3 rounded-sm overflow-hidden shadow-2xl">
               <motion.img 
-                src="/about-profile.png" 
+                src="/about-profile.webp" 
                 alt="Sobre Mim" 
                 className="w-full object-cover brightness-110 contrast-105"
                 initial={{ filter: 'grayscale(100%)' }}
@@ -361,7 +361,7 @@ const About = () => {
           {/* Coluna Direita: Foto Alinhada Perfeitamente (apenas Desktop) */}
           <div className="about-img hidden lg:block relative w-full h-full">
             <img 
-              src="/about-profile.png" 
+              src="/about-profile.webp" 
               alt="Sobre Mim" 
               className="absolute top-0 right-0 h-full w-auto max-w-none grayscale hover:grayscale-0 transition-all duration-700 brightness-110 contrast-105"
             />
@@ -437,9 +437,9 @@ const About = () => {
 
 const Portfolio = () => {
   const projects = [
-    { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.jpg', link: 'https://imobiflow-peach.vercel.app/', desc: 'Sistema com IA integrada, para corretores que querem ter seu próprio site e receber contatos diretos' },
-    { title: 'FastBeautyPro', category: 'Salões e Barbearias', img: '/images/fastbeautypro.jpg', link: 'https://fastbeautypro.vercel.app/', desc: 'Sistema de gestão para salões e barbearias que querem uma melhor gestão e agendamentos automáticos' },
-    { title: 'Poços Artesianos', category: 'Institucional', img: '/images/poco-artesiano.jpg', link: 'https://www.pocoartesianorj.com.br/', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
+    { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.webp', link: 'https://imobiflow-peach.vercel.app/', desc: 'Sistema com IA integrada, para corretores que querem ter seu próprio site e receber contatos diretos' },
+    { title: 'FastBeautyPro', category: 'Salões e Barbearias', img: '/images/fastbeautypro.webp', link: 'https://fastbeautypro.vercel.app/', desc: 'Sistema de gestão para salões e barbearias que querem uma melhor gestão e agendamentos automáticos' },
+    { title: 'Poços Artesianos', category: 'Institucional', img: '/images/poco-artesiano.webp', link: 'https://www.pocoartesianorj.com.br/', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
   ];
 
   return (
@@ -700,8 +700,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12 text-center">
           <div className="flex flex-col items-center gap-4">
-            <img src="/favicon-source.png" alt="Favicon" className="w-[90px] h-[90px] rounded-full object-contain mb-2" />
-            <img src="/jrbrandt-assinatura-bg.png" alt="Logo" className="h-12 w-auto object-contain" />
+            <img src="/favicon-source.webp" alt="Favicon" className="w-[90px] h-[90px] rounded-full object-contain mb-2" />
+            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo" className="h-12 w-auto object-contain" />
             <div className="text-lg font-bold tracking-widest uppercase">
               <span className="color">web</span>designer
             </div>
@@ -772,7 +772,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center gap-6"
           >
-            <img src="/jrbrandt-assinatura-bg.png" alt="Logo" className="h-20 md:h-28 w-auto object-contain" />
+            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo" className="h-20 md:h-28 w-auto object-contain" />
             <div className="text-2xl md:text-3xl font-bold tracking-[0.3em] uppercase">
               <span className="color">web</span>designer
             </div>
