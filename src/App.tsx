@@ -772,10 +772,11 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center gap-6"
+            className="flex flex-col items-center gap-1"
           >
-            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo" className="h-20 md:h-28 w-auto object-contain" />
-            <div className="text-2xl md:text-3xl font-bold tracking-[0.3em] uppercase">
+            <img src="/favicon-source.webp" alt="Favicon" className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full object-contain" />
+            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo" className="h-16 md:h-24 w-auto object-contain" />
+            <div className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase">
               <span className="color">web</span>designer
             </div>
           </motion.div>
