@@ -699,8 +699,8 @@ const Footer = () => {
     <footer className="py-16 border-t border-white/5 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <img src="/favicon-source.png" alt="Favicon" className="w-[60px] h-[60px] rounded-full object-contain mb-2" />
+          <div className="flex flex-col items-center gap-4">
+            <img src="/favicon-source.png" alt="Favicon" className="w-[90px] h-[90px] rounded-full object-contain mb-2" />
             <img src="/jrbrandt-assinatura-bg.png" alt="Logo" className="h-12 w-auto object-contain" />
             <div className="text-lg font-bold tracking-widest uppercase">
               <span className="color">web</span>designer
