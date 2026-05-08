@@ -312,7 +312,7 @@ const About = () => {
                 Eu sou{' '}
                 <span className="color font-bold">
                   <Typewriter
-                    words={['Webdesigner.', 'Desenvolvedor.', 'Freelancer.']}
+                    words={['Webdesigner.', 'Facilitador.', 'Freelancer.']}
                     loop={0}
                     cursor
                     cursorStyle="|"
