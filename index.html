@@ -26,6 +26,24 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <script>
+      // Instagram In-App Browser Detection & Fix for 403 Forbidden
+      (function() {
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var isInstagram = (ua.indexOf('Instagram') > -1) || (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
+        
+        if (isInstagram) {
+          // If on Android, try to force open in Chrome
+          if (ua.indexOf('Android') > -1) {
+            var intent = 'intent://' + window.location.host + window.location.pathname + '#Intent;scheme=https;package=com.android.chrome;end';
+            window.location.href = intent;
+          }
+          // If on iOS, we can't force open easily, but we can show a message or try a download trick
+          // Most 403s on Vercel from Instagram are Android-specific or WAF related
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
