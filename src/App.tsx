@@ -736,10 +736,11 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center gap-4 pt-8 border-t border-white/5">
-          <div className="flex items-center justify-center gap-2 text-[10px] text-muted uppercase tracking-[0.2em]">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[8px] md:text-[10px] text-muted uppercase tracking-[0.15em] text-center px-4">
             <span>© 2026</span>
-            <Copyright size={12} className="color" />
+            <Copyright size={10} className="color" />
             <span className="color font-bold">J. Roberto Brandt</span>
+            <span className="opacity-50">|</span>
             <span>Todos os Direitos Reservados</span>
           </div>
         </div>
