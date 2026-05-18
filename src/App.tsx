@@ -439,6 +439,7 @@ const Portfolio = () => {
   const projects = [
     { title: 'ImobiFlow', category: 'Imóveis', img: '/images/imobiflow.webp', link: 'https://imobiflow-peach.vercel.app/', desc: 'Sistema com IA integrada, para corretores que querem ter seu próprio site e receber contatos diretos' },
     { title: 'FastBeautyPro', category: 'Salões e Barbearias', img: '/images/fastbeautypro.webp', link: 'https://fastbeautypro.vercel.app/', desc: 'Sistema de gestão para salões e barbearias que querem uma melhor gestão e agendamentos automáticos' },
+    { title: 'Pack Gospel', category: 'Landing Page', img: '/images/landing.webp', link: 'https://leo-tondella.vercel.app/', desc: 'Landing page de alta conversão para venda de artes 100% editáveis no Canva voltadas para o público gospel' },
     { title: 'Poços Artesianos', category: 'Institucional', img: '/images/poco-artesiano.webp', link: 'https://www.pocoartesianorj.com.br/', desc: 'Sua empresa com presença profissional e autoridade no mercado digital' },
   ];
 

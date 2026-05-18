@@ -9,7 +9,8 @@ const images = [
   'public/profile.png',
   'public/images/fastbeautypro.jpg',
   'public/images/imobiflow.jpg',
-  'public/images/poco-artesiano.jpg'
+  'public/images/poco-artesiano.jpg',
+  'public/images/landing.png'
 ];
 
 async function convert() {
