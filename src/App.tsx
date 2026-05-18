@@ -457,7 +457,7 @@ const Portfolio = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {projects.map((p, i) => (
-            <div key={i} className="portfolio-card relative overflow-hidden group aspect-[16/10] rounded-sm shadow-lg">
+            <div key={i} className="portfolio-card relative overflow-hidden group aspect-[16/10] rounded-sm shadow-lg border border-red-600/30 hover:border-red-500/60 transition-all duration-300">
               <img 
                 src={p.img} 
                 alt={p.title} 
