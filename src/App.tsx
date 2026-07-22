@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useInView, animate } from 'motion/react';
 import { 
   Instagram, 
   Facebook, 
@@ -29,6 +29,73 @@ import { twMerge } from 'tailwind-merge';
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+// Component for scroll-triggered counter
+const AnimatedCounter = ({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) => {
+  const ref = React.useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (inView && ref.current) {
+      const node = ref.current;
+      const controls = animate(0, target, {
+        duration: 1.8,
+        ease: "easeOut",
+        onUpdate(latest) {
+          node.textContent = `${prefix}${Math.floor(latest)}${suffix}`;
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [inView, target, prefix, suffix]);
+
+  return <span ref={ref} className="color">{prefix}0{suffix}</span>;
+};
+
+// Component for creative RJ+SP animation
+const CreativeRJSpan = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.5, rotateY: -90, filter: 'blur(5px)' }}
+      animate={inView ? { 
+        opacity: 1, 
+        scale: [0.8, 1.15, 1], 
+        rotateY: 0, 
+        filter: 'blur(0px)' 
+      } : {}}
+      transition={{ 
+        type: "spring",
+        stiffness: 120,
+        damping: 12,
+        duration: 1.2
+      }}
+      className="inline-block"
+    >
+      <motion.span 
+        className="color inline-block font-extrabold"
+        animate={{ 
+          y: [0, -6, 0],
+          textShadow: [
+            "0 0 0px rgba(255,0,0,0)",
+            "0 0 12px rgba(255,0,0,0.6)",
+            "0 0 0px rgba(255,0,0,0)"
+          ]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 3, 
+          ease: "easeInOut" 
+        }}
+      >
+        RJ+SP
+      </motion.span>
+    </motion.div>
+  );
+};
 
 // --- Components ---
 
@@ -257,19 +324,27 @@ const Header = () => {
             {/* Prova Social — Números de Resultado */}
             <div className="flex flex-wrap gap-8 justify-center md:justify-start mt-8 pt-8 border-t border-white/10">
               <div className="text-center md:text-left">
-                <div className="text-2xl md:text-3xl font-bold color">+50</div>
+                <div className="text-2xl md:text-3xl font-bold color">
+                  <AnimatedCounter target={50} prefix="+" />
+                </div>
                 <div className="text-[9px] uppercase tracking-[0.25em] text-white/50 mt-1">Projetos entregues</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-2xl md:text-3xl font-bold color">+30</div>
+                <div className="text-2xl md:text-3xl font-bold color">
+                  <AnimatedCounter target={30} prefix="+" />
+                </div>
                 <div className="text-[9px] uppercase tracking-[0.25em] text-white/50 mt-1">Clientes ativos</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-2xl md:text-3xl font-bold color">100%</div>
+                <div className="text-2xl md:text-3xl font-bold color">
+                  <AnimatedCounter target={100} suffix="%" />
+                </div>
                 <div className="text-[9px] uppercase tracking-[0.25em] text-white/50 mt-1">Mobile-First</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-2xl md:text-3xl font-bold color">RJ+SP</div>
+                <div className="text-2xl md:text-3xl font-bold color">
+                  <CreativeRJSpan />
+                </div>
                 <div className="text-[9px] uppercase tracking-[0.25em] text-white/50 mt-1">& Brasil todo</div>
               </div>
             </div>
