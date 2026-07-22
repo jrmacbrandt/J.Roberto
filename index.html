@@ -3,26 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>J. Roberto Brandt | Webdesigner - Sites e Sistemas</title>
-    <meta name="description" content="Soluções digitais para pequenos negócios. Criação de sites, sistemas e landing pages focadas em conversão." />
-    
-    <!-- Canonical Link -->
+
+    <!-- =====================================================
+         GOOGLE TAG MANAGER — Inserir GTM-XXXXXXX quando disponível
+         Descomentar ambos os blocos (head + body noscript)
+    ====================================================== -->
+    <!--
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    -->
+
+    <!-- SEO: Title — keyword-first, ~60 chars -->
+    <title>Criação de Sites Profissionais | J. Roberto Brandt - Webdesigner RJ</title>
+
+    <!-- SEO: Meta Description — keyword + proposta de valor + CTA, ≤155 chars -->
+    <meta name="description" content="Criação de sites profissionais, sistemas e landing pages para pequenos negócios no RJ e Brasil. Mobile-First + SEO incluído. Solicite um orçamento grátis!" />
+
+    <!-- SEO: Keywords -->
+    <meta name="keywords" content="criação de sites profissionais, webdesigner Rio de Janeiro, criação de sites RJ, criação de sites SP, SEO, especialista SEO, landing page, sistemas web" />
+
+    <!-- SEO: Author + Robots -->
+    <meta name="author" content="J. Roberto Brandt" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- SEO: Geo Tags -->
+    <meta name="geo.region" content="BR-RJ" />
+    <meta name="geo.placename" content="Rio de Janeiro, RJ, Brasil" />
+    <meta name="geo.position" content="-22.93483018107959;-43.337380308882224" />
+    <meta name="ICBM" content="-22.93483018107959, -43.337380308882224" />
+
+    <!-- Canonical -->
     <link rel="canonical" href="https://portfolio-jrbrandt.vercel.app/" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://portfolio-jrbrandt.vercel.app/" />
-    <meta property="og:title" content="J. Roberto Brandt | Webdesigner - Sites e Sistemas" />
-    <meta property="og:description" content="Soluções digitais para pequenos negócios. Criação de sites, sistemas e landing pages focadas em conversão." />
+    <meta property="og:title" content="Criação de Sites Profissionais | J. Roberto Brandt - Webdesigner" />
+    <meta property="og:description" content="Criação de sites profissionais, sistemas e landing pages para pequenos negócios no RJ e Brasil. Solicite um orçamento grátis!" />
     <meta property="og:image" content="https://portfolio-jrbrandt.vercel.app/profile.webp" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="J. Roberto Brandt - Webdesigner" />
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://portfolio-jrbrandt.vercel.app/" />
-    <meta property="twitter:title" content="J. Roberto Brandt | Webdesigner - Sites e Sistemas" />
-    <meta property="twitter:description" content="Soluções digitais para pequenos negócios. Criação de sites, sistemas e landing pages focadas em conversão." />
+    <meta property="twitter:title" content="Criação de Sites Profissionais | J. Roberto Brandt - Webdesigner" />
+    <meta property="twitter:description" content="Criação de sites profissionais, sistemas e landing pages para pequenos negócios no RJ e Brasil." />
     <meta property="twitter:image" content="https://portfolio-jrbrandt.vercel.app/profile.webp" />
-    
+
     <!-- Favicons - Multi-platform -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -34,29 +67,255 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <!-- Android / PWA -->
     <meta name="theme-color" content="#000000" />
-  
-    
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Instagram In-App Browser Detection & Fix for 403 Forbidden -->
     <script>
-      // Instagram In-App Browser Detection & Fix for 403 Forbidden
       (function() {
         var ua = navigator.userAgent || navigator.vendor || window.opera;
         var isInstagram = (ua.indexOf('Instagram') > -1) || (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
-        
-        if (isInstagram) {
-          // If on Android, try to force open in Chrome
-          if (ua.indexOf('Android') > -1) {
-            var intent = 'intent://' + window.location.host + window.location.pathname + '#Intent;scheme=https;package=com.android.chrome;end';
-            window.location.href = intent;
-          }
-          // If on iOS, we can't force open easily, but we can show a message or try a download trick
-          // Most 403s on Vercel from Instagram are Android-specific or WAF related
+        if (isInstagram && ua.indexOf('Android') > -1) {
+          var intent = 'intent://' + window.location.host + window.location.pathname + '#Intent;scheme=https;package=com.android.chrome;end';
+          window.location.href = intent;
         }
       })();
     </script>
+
+    <!-- =====================================================
+         SCHEMA MARKUP JSON-LD — @graph completo
+    ====================================================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://portfolio-jrbrandt.vercel.app/#business",
+          "name": "J. Roberto Brandt - Webdesigner",
+          "url": "https://portfolio-jrbrandt.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://portfolio-jrbrandt.vercel.app/favicon-source.webp",
+            "width": 192,
+            "height": 192
+          },
+          "image": "https://portfolio-jrbrandt.vercel.app/profile.webp",
+          "telephone": "+5521980914107",
+          "email": "jrmacbrandt@yahoo.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Araguaia, 1111",
+            "addressLocality": "Freguesia (Jacarepaguá)",
+            "addressRegion": "RJ",
+            "postalCode": "22745-271",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -22.93483018107959,
+            "longitude": -43.337380308882224
+          },
+          "hasMap": "https://maps.google.com/maps?q=place_id:ChIJJcdH8CTYmwARG4kS7rFpSKM",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/jrbrandt.webdesigner/",
+            "https://www.linkedin.com/in/jos%C3%A9-roberto-machado-brandt-1a424460/"
+          ],
+          "description": "Webdesigner especialista em criação de sites profissionais, sistemas e landing pages para pequenos negócios no Rio de Janeiro, São Paulo e todo o Brasil.",
+          "areaServed": [
+            { "@type": "City", "name": "Rio de Janeiro" },
+            { "@type": "AdministrativeArea", "name": "São Paulo" },
+            { "@type": "Country", "name": "Brasil" }
+          ],
+          "priceRange": "$$",
+          "knowsAbout": ["Web Design", "SEO", "Desenvolvimento Web", "Landing Pages", "Sistemas Web", "HTML", "CSS", "JavaScript", "PHP"],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://portfolio-jrbrandt.vercel.app/#person",
+          "name": "J. Roberto Brandt",
+          "givenName": "Roberto",
+          "familyName": "Brandt",
+          "jobTitle": "Webdesigner & Especialista em SEO",
+          "url": "https://portfolio-jrbrandt.vercel.app/",
+          "email": "jrmacbrandt@yahoo.com",
+          "telephone": "+5521980914107",
+          "image": "https://portfolio-jrbrandt.vercel.app/about-profile.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rio de Janeiro",
+            "addressRegion": "RJ",
+            "addressCountry": "BR"
+          },
+          "sameAs": [
+            "https://www.instagram.com/jrbrandt.webdesigner/",
+            "https://www.linkedin.com/in/jos%C3%A9-roberto-machado-brandt-1a424460/"
+          ],
+          "knowsAbout": ["Web Design", "SEO", "Desenvolvimento Web", "Landing Pages", "PHP", "JavaScript", "HTML", "CSS"],
+          "worksFor": {
+            "@id": "https://portfolio-jrbrandt.vercel.app/#business"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://portfolio-jrbrandt.vercel.app/#website",
+          "url": "https://portfolio-jrbrandt.vercel.app/",
+          "name": "J. Roberto Brandt - Webdesigner",
+          "description": "Criação de sites profissionais, sistemas e landing pages para pequenos negócios",
+          "inLanguage": "pt-BR",
+          "publisher": {
+            "@id": "https://portfolio-jrbrandt.vercel.app/#business"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://portfolio-jrbrandt.vercel.app/sistema/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://portfolio-jrbrandt.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quanto custa para criar um site profissional?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O investimento varia de acordo com as funcionalidades necessárias, mas meu foco é oferecer o melhor custo-benefício para que pequenos negócios possam crescer online sem custos astronômicos. Entre em contato para receber um orçamento personalizado e sem compromisso."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quanto tempo leva para o site ficar pronto?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Geralmente o prazo de entrega fica entre 7 a 15 dias úteis, dependendo da complexidade do projeto e da agilidade no envio dos materiais por parte do cliente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Meu site vai aparecer no Google?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Todos os projetos já saem com otimização SEO técnica básica. Também ofereço serviços de SEO avançado para ranquear nas primeiras posições do Google, atraindo clientes organicamente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O site funciona bem no celular?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Com certeza. Hoje mais de 80% dos acessos vêm de smartphones. Utilizo a metodologia Mobile-First, garantindo que seu site seja rápido e bonito em qualquer tela."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Vou conseguir receber contatos pelo WhatsApp?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Integro botões flutuantes e CTAs estratégicas que direcionam o cliente direto para o seu WhatsApp de atendimento."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Fazem sites para empresas de São Paulo também?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Atendo clientes de todo o Brasil de forma 100% remota, com comunicação facilitada pelo WhatsApp e reuniões por videoconferência. Tenho clientes em São Paulo, Rio de Janeiro e em todo o território nacional."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que é SEO e por que meu site precisa disso?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SEO (Search Engine Optimization) é o conjunto de técnicas que fazem seu site aparecer nas primeiras posições do Google quando alguém busca pelos seus serviços. Sem SEO, seu site existe mas ninguém te encontra. Ofereço otimização completa para que seu negócio seja encontrado organicamente, sem pagar por anúncios."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Vocês oferecem suporte após a entrega do site?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim, ofereço suporte pós-entrega para garantir que tudo funcione perfeitamente. Pequenos ajustes e correções são tratados diretamente pelo WhatsApp, de forma rápida e sem burocracia."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://portfolio-jrbrandt.vercel.app/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Início",
+              "item": "https://portfolio-jrbrandt.vercel.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sobre",
+              "item": "https://portfolio-jrbrandt.vercel.app/#about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Soluções",
+              "item": "https://portfolio-jrbrandt.vercel.app/#portfolio"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Depoimentos",
+              "item": "https://portfolio-jrbrandt.vercel.app/#testimonials"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "FAQ",
+              "item": "https://portfolio-jrbrandt.vercel.app/#faq"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Contato",
+              "item": "https://portfolio-jrbrandt.vercel.app/#contact"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
+    <!-- GTM noscript fallback — Descomentar quando GTM-XXXXXXX for configurado -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

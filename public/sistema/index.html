@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Performance SEO & Analytics | J. Roberto Brandt</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff0000;
+            --bg-dark: #070708;
+            --bg-card: #111113;
+            --bg-card-hover: #17171a;
+            --text-main: #f3f4f6;
+            --text-muted: #8e929b;
+            --border: rgba(255, 255, 255, 0.05);
+            --border-hover: rgba(255, 0, 0, 0.3);
+            --glow: rgba(255, 0, 0, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-title h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-title h1 span {
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .badge-status {
+            background-color: rgba(37, 211, 102, 0.1);
+            color: #25D366;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #25D366;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* KPI Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .kpi-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            box-shadow: 0 12px 30px var(--glow);
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .kpi-card:hover::before {
+            opacity: 1;
+        }
+
+        .kpi-label {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .kpi-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 12px 0 6px 0;
+        }
+
+        .kpi-change {
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .kpi-change.positive {
+            color: #25D366;
+        }
+
+        /* Main Section & Sidebar */
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        /* Looker Studio / Graph Placeholder */
+        .chart-container {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .chart-container svg {
+            color: var(--primary);
+            width: 48px;
+            height: 48px;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 2px rgba(255, 0, 0, 0)); }
+            50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.4)); }
+        }
+
+        .chart-container h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .chart-container p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 320px;
+        }
+
+        /* Looker link button */
+        .btn-looker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-looker:hover {
+            filter: brightness(1.2);
+            transform: translateY(-2px);
+        }
+
+        /* Sidebar Info */
+        .sidebar-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-item {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-item-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .sidebar-item-value {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-item-value.success {
+            color: #25D366;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-home a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .back-home a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header>
+            <div class="header-title">
+                <h1>Painel de <span>Performance</span></h1>
+                <p>Métricas de SEO, Conversões e Tráfego Orgânico</p>
+            </div>
+            <div class="badge-status">Monitoramento Ativo</div>
+        </header>
+
+        <!-- KPI Grid -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Visitantes Orgânicos</div>
+                <div class="kpi-value">--</div>
+                <div class="kpi-change positive">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                    Aguardando GA4
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Cliques no WhatsApp</div>
+                <div class="kpi-value">--</div>
+                <div class="kpi-change positive">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                    Aguardando Evento
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">CTR Médio (GSC)</div>
+                <div class="kpi-value">--</div>
+                <div class="kpi-change positive">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                    Aguardando GSC
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Tempo de Sessão</div>
+                <div class="kpi-value">--</div>
+                <div class="kpi-change positive">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                    Aguardando Dados
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Layout -->
+        <div class="dashboard-content">
+            <!-- Left Panel: Main Report -->
+            <main class="panel-card">
+                <h2>Relatório de Tráfego Geral</h2>
+                <div class="chart-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2" />
+                    </svg>
+                    <h3>Integração com Looker Studio / GA4</h3>
+                    <p>O ambiente de medição de dados já está totalmente preparado no código do site. Quando você configurar o ID do Google Analytics 4 (GA4), os dados começarão a aparecer automaticamente aqui.</p>
+                    <a href="https://lookerstudio.google.com/" target="_blank" rel="noreferrer" class="btn-looker">
+                        Acessar Looker Studio
+                    </a>
+                </div>
+            </main>
+
+            <!-- Right Panel: Checklist / Specs -->
+            <aside class="panel-card">
+                <h2>Status da Configuração</h2>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <span class="sidebar-item-label">Google Tag Manager</span>
+                        <span class="sidebar-item-value text-muted" style="color: #ff9f43;">Preparado</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <span class="sidebar-item-label">Google Analytics 4</span>
+                        <span class="sidebar-item-value text-muted" style="color: #ff9f43;">Preparado</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <span class="sidebar-item-label">Microsoft Clarity</span>
+                        <span class="sidebar-item-value text-muted" style="color: #ff9f43;">Preparado</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <span class="sidebar-item-label">Rastreamento de Conversão</span>
+                        <span class="sidebar-item-value success">Ativo (WhatsApp)</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <span class="sidebar-item-label">Otimização SEO Local</span>
+                        <span class="sidebar-item-value success">Concluído</span>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+        <div class="back-home">
+            <a href="/">← Voltar para o Site Principal</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://portfolio-jrbrandt.vercel.app/</loc>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/profile.webp</image:loc>
+      <image:title>J. Roberto Brandt - Webdesigner Especialista em Criação de Sites</image:title>
+      <image:caption>Foto de perfil de J. Roberto Brandt, Webdesigner no Rio de Janeiro.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/about-profile.webp</image:loc>
+      <image:title>J. Roberto Brandt - Webdesigner Especialista em SEO</image:title>
+      <image:caption>J. Roberto Brandt em seu escritório de desenvolvimento web no RJ.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/jrbrandt-assinatura-bg.webp</image:loc>
+      <image:title>Logo Assinatura J. Roberto Brandt</image:title>
+      <image:caption>Logotipo oficial da J. Roberto Brandt - Webdesigner.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/images/imobiflow.webp</image:loc>
+      <image:title>ImobiFlow - Sistema com IA para Corretores</image:title>
+      <image:caption>Tela do sistema ImobiFlow criado para corretores de imóveis.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/images/fastbeautypro.webp</image:loc>
+      <image:title>FastBeautyPro - Gestão para Salões e Barbearias</image:title>
+      <image:caption>Tela do sistema de agendamento automático FastBeautyPro.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/images/landing.webp</image:loc>
+      <image:title>Pack Gospel - Landing Page de Alta Conversão</image:title>
+      <image:caption>Landing Page de conversão de artes editáveis para o público gospel.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://portfolio-jrbrandt.vercel.app/images/poco-artesiano.webp</image:loc>
+      <image:title>Poços Artesianos - Site Institucional</image:title>
+      <image:caption>Presença profissional e autoridade no mercado digital para empresa de poços artesianos.</image:caption>
+    </image:image>
+  </url>
+</urlset>

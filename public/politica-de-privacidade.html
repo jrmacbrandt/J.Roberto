@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - J. Roberto Brandt</title>
+    <title>Política de Privacidade | J. Roberto Brandt - Webdesigner</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="robots" content="noindex, nofollow">
     <style>
         :root {
-            --color: #ff0000; /* Red color matching the site */
+            --color: #ff0000;
             --bg: #0a0a0a;
             --text: #ffffff;
-            --muted: #888888;
+            --muted: #a0a0a0;
+            --card-bg: #151515;
+            --border: rgba(255, 255, 255, 0.05);
         }
         body {
             background-color: var(--bg);
@@ -26,23 +29,49 @@
         }
         h1 {
             color: var(--color);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             text-transform: uppercase;
             letter-spacing: -1px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             border-left: 4px solid var(--color);
             padding-left: 20px;
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-top: 40px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #fff;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
         }
         p, li {
             color: var(--muted);
-            font-size: 1.1rem;
+            font-size: 1rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        .cookie-table th, .cookie-table td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: left;
+        }
+        .cookie-table th {
+            background-color: var(--card-bg);
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
         .back-link {
             display: inline-block;
@@ -65,24 +94,87 @@
 <body>
     <div class="container">
         <h1>Política de Privacidade</h1>
+        <p><strong>Última atualização:</strong> 22 de Julho de 2026</p>
         
-        <p>A sua privacidade é importante para nós. É política do J. Roberto Brandt respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site J. Roberto Brandt, e outros sites que possuímos e operamos.</p>
+        <p>Esta Política de Privacidade descreve como <strong>J. Roberto Brandt - Webdesigner</strong> (doravante referida como "nós", "nosso" ou "empresa") coleta, usa, armazena e protege os dados pessoais dos usuários que acessam o site <a href="https://portfolio-jrbrandt.vercel.app/" style="color: var(--color); text-decoration: none;">https://portfolio-jrbrandt.vercel.app/</a> em estrita conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD) - Lei nº 13.709/2018</strong>.</p>
         
-        <h2>1. Coleta de Informações</h2>
-        <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</p>
+        <h2>1. Dados Pessoais Coletados e Finalidade</h2>
+        <p>Nós coletamos dados de forma estritamente proporcional e legal para as seguintes finalidades:</p>
+        <ul>
+            <li><strong>Formulário de Contato:</strong> Coletamos Nome, E-mail, Tipo de Negócio e a mensagem fornecida por você. Esses dados são utilizados exclusivamente para responder às suas solicitações de orçamento e prestar o serviço contratado.</li>
+            <li><strong>Interações por WhatsApp:</strong> Quando você inicia um contato através do botão flutuante, coletamos o seu número de telefone e nome para fins de atendimento comercial direto.</li>
+            <li><strong>Dados de Navegação (Analytics & CRO):</strong> Coletamos dados estatísticos anônimos (como páginas visitadas, tempo de permanência, cliques e origem do tráfego) para monitorar e melhorar o desempenho e usabilidade do site.</li>
+        </ul>
         
-        <h2>2. Uso de Dados</h2>
-        <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p>
-        <p>O preenchimento do formulário de contato implica no processamento dos seus dados para fins de resposta à sua solicitação e possível envio de informações sobre nossos serviços.</p>
+        <h2>2. Bases Legais para o Tratamento de Dados</h2>
+        <p>Em conformidade com a LGPD, o tratamento dos seus dados ocorre sob as seguintes bases legais:</p>
+        <ul>
+            <li><strong>Consentimento:</strong> Fornecido ativamente ao enviar um formulário ou aceitar cookies.</li>
+            <li><strong>Execução de Contrato ou Procedimentos Preliminares:</strong> Necessário para elaboração de propostas comerciais de desenvolvimento web.</li>
+            <li><strong>Legítimo Interesse:</strong> Para fins de melhoria contínua e segurança do nosso website, sem ferir seus direitos fundamentais.</li>
+        </ul>
         
-        <h2>3. Cookies</h2>
-        <p>Utilizamos cookies para melhorar sua experiência de navegação e entender como você interage com nosso site.</p>
+        <h2>3. Uso de Cookies e Tecnologias de Rastreamento</h2>
+        <p>Utilizamos cookies para personalizar o conteúdo, fornecer recursos de redes sociais e analisar o nosso tráfego. Abaixo detalhamos os principais tipos de cookies que podem ser armazenados:</p>
         
-        <h2>4. Direitos do Usuário</h2>
-        <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
+        <table class="cookie-table">
+            <thead>
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Tipo</th>
+                    <th>Finalidade</th>
+                    <th>Duração</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Google Analytics 4 (GA4)</td>
+                    <td>Estatístico / Analítico</td>
+                    <td>Rastreia a navegação de forma anônima para medir o tráfego do site.</td>
+                    <td>Até 2 anos</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Clarity</td>
+                    <td>Comportamental (CRO)</td>
+                    <td>Gera mapas de calor e gravações de sessão para identificar atritos de usabilidade.</td>
+                    <td>Até 1 ano</td>
+                </tr>
+                <tr>
+                    <td>Preferências Internas</td>
+                    <td>Funcional</td>
+                    <td>Armazena as configurações de cor escolhidas no painel de acessibilidade do site.</td>
+                    <td>Sessão</td>
+                </tr>
+                <tr>
+                    <td>Aceite de LGPD</td>
+                    <td>Necessário</td>
+                    <td>Registra se o usuário já aceitou ou não o banner de consentimento de privacidade.</td>
+                    <td>Permanente</td>
+                </tr>
+            </tbody>
+        </table>
         
-        <h2>5. Consentimento</h2>
-        <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contato conosco.</p>
+        <p>Você pode configurar seu navegador para recusar todos os cookies ou para indicar quando um cookie está sendo enviado. Contudo, algumas partes do site podem não funcionar corretamente caso desative os cookies funcionais.</p>
+
+        <h2>4. Direitos dos Titulares de Dados</h2>
+        <p>Como titular dos dados pessoais sob a LGPD, você possui os seguintes direitos garantidos:</p>
+        <ul>
+            <li>Confirmação da existência de tratamento dos dados;</li>
+            <li>Acesso aos seus dados sob nosso controle;</li>
+            <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+            <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade com a lei;</li>
+            <li>Revogação do consentimento a qualquer momento de forma simples e gratuita.</li>
+        </ul>
+        <p>Para exercer qualquer um destes direitos, basta enviar um e-mail para <a href="mailto:jrmacbrandt@yahoo.com" style="color: var(--color); text-decoration: none;">jrmacbrandt@yahoo.com</a> com a sua solicitação.</p>
+
+        <h2>5. Armazenamento e Segurança dos Dados</h2>
+        <p>Adotamos medidas de segurança técnicas e administrativas adequadas para proteger os dados pessoais contra acessos não autorizados, perdas ou qualquer forma de tratamento indevido. Forçamos o tráfego seguro em HTTPS e adotamos CSP (Content Security Policy) no servidor para mitigar ataques.</p>
+
+        <h2>6. Compartilhamento de Dados</h2>
+        <p>Nós não vendemos, alugamos ou compartilhamos seus dados pessoais com fins comerciais com terceiros. Os dados estatísticos são processados de forma agregada e anônima pelas plataformas parceiras (Google e Microsoft) sob rigorosas políticas de privacidade internas destas empresas.</p>
+
+        <h2>7. Alterações a Esta Política</h2>
+        <p>Reservamos o direito de atualizar esta Política de Privacidade periodicamente. Recomendamos que você visite esta página com regularidade para se manter atualizado sobre como protegemos suas informações.</p>
         
         <a href="/" class="back-link">← Voltar para o site</a>
     </div>
