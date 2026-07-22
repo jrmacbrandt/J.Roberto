@@ -71,6 +71,14 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Non-blocking asynchronous font loading -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
+    </noscript>
+
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="/profile.webp" type="image/webp" fetchpriority="high" />
 
     <!-- Instagram In-App Browser Detection & Fix for 403 Forbidden -->
     <script>
@@ -328,6 +336,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     -->
+    <a href="#main" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; focus:left: 0; focus:width: auto; focus:height: auto;">Pular para o conteúdo principal</a>
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

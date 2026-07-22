@@ -205,16 +205,18 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
         </nav>
 
         {/* Mobile Hamburger Button */}
-        <div 
-          className="md:hidden cursor-pointer z-[1001]" 
+        <button
+          className="md:hidden cursor-pointer z-[1001] bg-transparent border-0 p-1"
           onClick={() => setIsOpen(true)}
+          aria-label="Abrir menu de navegação"
+          aria-expanded={isOpen}
         >
           <div className="flex flex-col gap-1.5">
-            <span className="w-8 h-0.5 bg-white"></span>
-            <span className="w-8 h-0.5 bg-white"></span>
-            <span className="w-8 h-0.5 bg-white"></span>
+            <span className="w-8 h-0.5 bg-white block"></span>
+            <span className="w-8 h-0.5 bg-white block"></span>
+            <span className="w-8 h-0.5 bg-white block"></span>
           </div>
-        </div>
+        </button>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -281,7 +283,7 @@ const Header = () => {
       {init && (
         <Particles
           id="tsparticles"
-          options={particlesOptions as any}
+          options={particlesOptions}
           className="absolute inset-0 z-0"
         />
       )}
