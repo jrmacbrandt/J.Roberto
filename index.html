@@ -71,11 +71,20 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Non-blocking asynchronous font loading -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
-    </noscript>
+    <!-- Non-blocking async font loading with font-display=swap -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap&font-display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
+  </noscript>
+
+  <!-- Critical CSS inline: prevent FCP delay -->
+  <style>
+    *,::before,::after{box-sizing:border-box;margin:0;padding:0}
+    body{background-color:#0a0a0a;color:#ffffff;overflow-x:hidden;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    #root{min-height:100vh}
+    .skip-link{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:10px 20px;background:#ff0000;color:#fff;font-size:14px;font-weight:700;letter-spacing:.1em;text-decoration:none;z-index:99999}
+  </style>
 
     <!-- Preload LCP Image -->
     <link rel="preload" as="image" href="/profile.webp" type="image/webp" fetchpriority="high" />
@@ -386,20 +395,7 @@
     -->
     <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
 
-    <div id="root">
-      <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 md:pt-28 pb-12 md:pb-16 bg-black">
-        <div class="z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-12 items-center min-h-[80vh] relative">
-          <div class="md:col-span-8 text-center md:text-left z-20 space-y-8 flex flex-col items-center md:items-start order-1 md:order-none">
-            <h1 class="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] font-bold leading-[1.1] mb-6 text-white" style="font-family: 'Inter', sans-serif;">
-              Sou Webdesigner e crio <br class="hidden md:block" />
-              <span style="color: #ff0000">Sites, Sistemas e Landing Pages</span> <br class="hidden md:block" />
-              que ajudam empresas a <br class="hidden md:block" />
-              conseguirem <span style="color: #ff0000">mais clientes</span>
-            </h1>
-          </div>
-        </div>
-      </section>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
