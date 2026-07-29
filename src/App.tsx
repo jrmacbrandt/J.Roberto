@@ -225,6 +225,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
           <button 
             onClick={() => setIsOpen(false)}
             className="absolute top-6 right-6 p-4 text-white"
+            aria-label="Fechar menu de navegação"
           >
             <X size={48} />
           </button>
@@ -307,10 +308,12 @@ const Header = () => {
                 <source srcSet="/profile.webp" type="image/webp" />
                 <img 
                   src="/profile.png" 
-                  alt="J. Roberto Brandt" 
+                  alt="J. Roberto Brandt - Webdesigner" 
                   className="w-full h-auto object-cover object-top grayscale"
                   width="800"
                   height="1000"
+                  fetchPriority="high"
+                  loading="eager"
                 />
               </picture>
             </div>
@@ -366,10 +369,12 @@ const Header = () => {
           <source srcSet="/profile.webp" type="image/webp" />
           <img 
             src="/profile.png" 
-            alt="J. Roberto Brandt" 
+            alt="J. Roberto Brandt - Webdesigner" 
             className="w-full h-auto object-cover object-top grayscale opacity-80"
             width="800"
             height="1000"
+            fetchPriority="high"
+            loading="eager"
           />
         </picture>
       </div>
@@ -1119,9 +1124,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    console.log("App mounted, starting loader...");
     const timer = setTimeout(() => {
-      console.log("Loading complete, showing main content.");
       setLoading(false);
     }, 2000);
     return () => clearTimeout(timer);
@@ -1161,8 +1164,8 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center gap-1"
           >
-            <img src="/favicon-source.webp" alt="Favicon" className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full object-contain" />
-            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo" className="h-16 md:h-24 w-auto object-contain" />
+            <img src="/favicon-source.webp" alt="J. Roberto Brandt - Webdesigner" className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full object-contain" width="150" height="150" />
+            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo J. Roberto Brandt" className="h-16 md:h-24 w-auto object-contain" width="300" height="96" />
             <div className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase">
               <span className="color">web</span>designer
             </div>
@@ -1178,7 +1181,7 @@ export default function App() {
           <ColorChanger />
           <Navigation setActiveSection={setActiveSection} />
           
-          <main>
+          <main id="main">
             <Header />
             <About />
             <Portfolio />
@@ -1191,7 +1194,8 @@ export default function App() {
           <a
             href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
+            aria-label="Fale comigo no WhatsApp"
             className="fixed bottom-8 right-8 z-[3000] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow"
           >
             <img 
