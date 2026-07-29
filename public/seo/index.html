@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title: keyword-first, ~60 chars -->
+    <title>Otimização de SEO Profissional | J. Roberto Brandt</title>
+    <meta name="description" content="Aumente as vendas de sua empresa aparecendo nas primeiras posições do Google. Otimização de SEO profissional e local para pequenos negócios. Solicite orçamento!">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://portfolio-jrbrandt.vercel.app/seo/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap">
+    <style>
+        :root {
+            --primary: #ff0000;
+            --bg-dark: #0a0a0a;
+            --bg-card: #151515;
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: rgba(255, 255, 255, 0.05);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: 99999;
+        }
+        .skip-link:focus {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: auto;
+            height: auto;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+            outline: 3px solid #fff;
+            text-decoration: none;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            margin-left: 20px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin: 0 0 20px;
+            line-height: 1.1;
+        }
+        h1 span {
+            color: var(--primary);
+        }
+        .hero-desc {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 13px;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+        .btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        .feature-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 2px;
+            transition: border-color 0.3s;
+        }
+        .feature-card:hover {
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 80px 0;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .content-section { grid-template-columns: 1fr; gap: 40px; }
+        }
+        .content-text h2 {
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+        }
+        .content-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            border: 1px solid var(--border);
+            filter: grayscale(100%);
+        }
+        .contact-block {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 2px;
+            margin: 60px 0;
+        }
+        .contact-block h2 {
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 24px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .contact-item {
+            font-size: 14px;
+        }
+        .contact-item strong {
+            display: block;
+            text-transform: uppercase;
+            font-size: 11px;
+            color: var(--primary);
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+        .faq-section {
+            margin: 80px 0;
+        }
+        .faq-section h2 {
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
+            border-radius: 2px;
+        }
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            text-align: left;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        footer {
+            padding: 60px 20px;
+            border-top: 1px solid var(--border);
+            background-color: #050505;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .copyright {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+    </style>
+    <!-- Schema Markup JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://portfolio-jrbrandt.vercel.app/#business",
+          "name": "J. Roberto Brandt - Webdesigner",
+          "url": "https://portfolio-jrbrandt.vercel.app/",
+          "telephone": "+5521980914107",
+          "email": "jrmacbrandt@yahoo.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Araguaia, 1111",
+            "addressLocality": "Freguesia (Jacarepaguá)",
+            "addressRegion": "RJ",
+            "postalCode": "22745-271",
+            "addressCountry": "BR"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://portfolio-jrbrandt.vercel.app/seo/#webpage",
+          "url": "https://portfolio-jrbrandt.vercel.app/seo/",
+          "name": "Otimização de SEO Profissional | J. Roberto Brandt",
+          "description": "Aumente as vendas de sua empresa aparecendo nas primeiras posições do Google. Otimização de SEO profissional e local.",
+          "isPartOf": {
+            "@id": "https://portfolio-jrbrandt.vercel.app/#website"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://portfolio-jrbrandt.vercel.app/seo/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quanto tempo leva para o SEO dar resultado?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SEO é uma estratégia de médio a longo prazo. Geralmente, os primeiros resultados de indexação local aparecem em 30 dias, mas o aumento consistente de tráfego qualificado e conversões consolida-se entre 3 a 6 meses de trabalho contínuo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que está incluído no serviço de SEO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O serviço engloba auditoria técnica (correção de erros do site), pesquisa detalhada de palavras-chave, otimização on-page de títulos e conteúdo, estruturação de SEO Local (GBP e NAP consistente) e relatórios mensais de posicionamento."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+        <div class="logo">
+            <a href="/"><img src="/jrbrandt-assinatura-bg.webp" alt="Logo J. Roberto Brandt"></a>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/criacao-de-sites/">Sites</a>
+            <a href="/landing-pages/">Landing Pages</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="hero">
+            <h1>Otimização de <span>SEO Profissional</span></h1>
+            <p class="hero-desc">
+                Posicione o site da sua empresa no topo do Google quando seus potenciais clientes buscarem pelos seus produtos e serviços na sua região. Mais tráfego orgânico sem pagar por anúncios.
+            </p>
+            <a href="https://wa.me/5521980914107?text=Olá,%20gostaria%20de%20solicitar%20um%20diagnóstico%20de%20SEO" class="btn" target="_blank" rel="noreferrer">Solicitar diagnóstico de SEO</a>
+        </section>
+
+        <section class="grid-features">
+            <div class="feature-card">
+                <h3>SEO Local</h3>
+                <p>Estratégias específicas para negócios que atendem fisicamente ou em regiões delimitadas (como RJ e SP). Sincronia perfeita com o Google Business Profile.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Auditoria Técnica</h3>
+                <p>Otimização de velocidade, correção de erros de indexação, configuração de sitemaps e dados estruturados (Schema JSON-LD) válidos.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Otimização On-Page</h3>
+                <p>Reformulação de títulos, descrições, imagens e textos do site focada em palavras-chave que seus clientes realmente pesquisam para comprar.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-text">
+                <h2>Seja encontrado por quem quer comprar de você</h2>
+                <p>
+                    Aparecer nas primeiras posições dos mecanismos de busca traz leads extremamente qualificados. Diferente do tráfego pago, os cliques orgânicos são gratuitos e a autoridade que seu site constrói é perene.
+                </p>
+                <p>
+                    Analiso a sua concorrência, mapeio as brechas de mercado e implemento soluções sólidas que trazem visitas de alta intenção comercial.
+                </p>
+                <a href="https://wa.me/5521980914107?text=Quero%20um%20orçamento%20de%20SEO" class="btn" target="_blank" rel="noreferrer">Solicitar um orçamento</a>
+            </div>
+            <div class="content-image">
+                <img src="/about-profile.webp" alt="Otimização de SEO local - J. Roberto Brandt">
+            </div>
+        </section>
+
+        <section class="contact-block">
+            <h2>Informações de Contato e Localização</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Empresa</strong>
+                    J. Roberto Brandt - Webdesigner
+                </div>
+                <div class="contact-item">
+                    <strong>Endereço</strong>
+                    R. Araguaia, 1111 — Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22745-271
+                </div>
+                <div class="contact-item">
+                    <strong>Telefone/WhatsApp</strong>
+                    +55 21 98091-4107
+                </div>
+                <div class="contact-item">
+                    <strong>E-mail</strong>
+                    jrmacbrandt@yahoo.com
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
+                    Quanto tempo leva para o SEO dar resultado? <span>+</span>
+                </button>
+                <div class="faq-answer" style="display:none;">
+                    SEO é uma estratégia de médio a longo prazo. Geralmente, os primeiros resultados de indexação local aparecem em 30 dias, mas o aumento consistente de tráfego qualificado e conversões consolida-se entre 3 a 6 meses de trabalho contínuo.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'">
+                    O que está incluído no serviço de SEO? <span>+</span>
+                </button>
+                <div class="faq-answer" style="display:none;">
+                    O serviço engloba auditoria técnica (correção de erros do site), pesquisa detalhada de palavras-chave, otimização on-page de títulos e conteúdo, estruturação de SEO Local (GBP e NAP consistente) e relatórios mensais de posicionamento.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/criacao-de-sites/">Criação de Sites</a>
+            <a href="/landing-pages/">Landing Pages</a>
+            <a href="/criacao-de-sites-rio-de-janeiro/">Rio de Janeiro</a>
+            <a href="/criacao-de-sites-sao-paulo/">São Paulo</a>
+            <a href="/blog/">Blog</a>
+            <a href="/politica-de-privacidade.html" rel="nofollow">Política de Privacidade</a>
+            <a href="/termos-de-uso.html" rel="nofollow">Termos de Uso</a>
+        </div>
+        <div class="copyright">
+            © 2026 J. Roberto Brandt | Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>

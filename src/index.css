@@ -35,6 +35,34 @@ body {
 
 
 
+/* Skip Link — Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 99999;
+}
+.skip-link:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  overflow: visible;
+}
+
 /* Loader */
 #loader {
   position: fixed;

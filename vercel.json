@@ -1,7 +1,9 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": true,
   "rewrites": [
     {
-      "source": "/((?!api/|sistema/|.*\\..*).*)",
+      "source": "/((?!api/|sistema/|criacao-de-sites|seo|landing-pages|criacao-de-sites-rio-de-janeiro|criacao-de-sites-sao-paulo|blog|.*\\..*).*)",
       "destination": "/index.html"
     }
   ],

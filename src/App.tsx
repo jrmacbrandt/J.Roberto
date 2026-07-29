@@ -182,7 +182,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
         )} 
       />
 
-      <div id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000] bg-black/50 backdrop-blur-md">
+      <header id="navigation-bar" className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-[1000] bg-black/50 backdrop-blur-md">
         <div className="logo h-12 md:h-14 flex items-center overflow-hidden">
           <img 
             src="/jrbrandt-assinatura-bg.webp" 
@@ -217,7 +217,7 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
             <span className="w-8 h-0.5 bg-white block"></span>
           </div>
         </button>
-      </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
@@ -303,11 +303,16 @@ const Header = () => {
 
             {/* Imagem de Perfil (Ordem 2 no Mobile) */}
             <div className="w-full mx-auto order-2 md:hidden mb-8">
-              <img 
-                src="/profile.webp" 
-                alt="J. Roberto Brandt" 
-                className="w-full h-auto object-cover object-top grayscale"
-              />
+              <picture>
+                <source srcSet="/profile.webp" type="image/webp" />
+                <img 
+                  src="/profile.png" 
+                  alt="J. Roberto Brandt" 
+                  className="w-full h-auto object-cover object-top grayscale"
+                  width="800"
+                  height="1000"
+                />
+              </picture>
             </div>
             
             <p className="secondline text-[14px] sm:text-[16px] md:text-[22px] font-light uppercase tracking-wider mb-10 max-w-3xl opacity-80 leading-relaxed">
@@ -357,11 +362,16 @@ const Header = () => {
 
       {/* Lado Direito: Imagem de Perfil (Apenas Desktop) - Alinhada à borda direita com 0 espaçamento */}
       <div className="hidden md:block absolute bottom-0 right-0 w-[31%] pointer-events-none select-none z-10">
-        <img 
-          src="/profile.webp" 
-          alt="J. Roberto Brandt" 
-          className="w-full h-auto object-cover object-top grayscale opacity-80"
-        />
+        <picture>
+          <source srcSet="/profile.webp" type="image/webp" />
+          <img 
+            src="/profile.png" 
+            alt="J. Roberto Brandt" 
+            className="w-full h-auto object-cover object-top grayscale opacity-80"
+            width="800"
+            height="1000"
+          />
+        </picture>
       </div>
     </section>
   );
@@ -431,16 +441,21 @@ const About = () => {
 
             {/* Foto visível apenas no mobile, acima do texto */}
             <div className="block lg:hidden my-3 rounded-sm overflow-hidden shadow-2xl">
-              <motion.img 
-                src="/about-profile.webp" 
-                alt="J. Roberto Brandt - Webdesigner e Especialista em SEO em Rio de Janeiro" 
-                className="w-full object-cover brightness-110 contrast-105"
-                loading="lazy"
-                initial={{ filter: 'grayscale(100%)' }}
-                whileInView={{ filter: 'grayscale(0%)' }}
-                transition={{ duration: 1.2, ease: 'easeOut' }}
-                viewport={{ once: false, amount: 0.3 }}
-              />
+              <picture>
+                <source srcSet="/about-profile.webp" type="image/webp" />
+                <motion.img 
+                  src="/about-profile.png" 
+                  alt="J. Roberto Brandt - Webdesigner e Especialista em SEO em Rio de Janeiro" 
+                  className="w-full object-cover brightness-110 contrast-105"
+                  loading="lazy"
+                  width="800"
+                  height="1000"
+                  initial={{ filter: 'grayscale(100%)' }}
+                  whileInView={{ filter: 'grayscale(0%)' }}
+                  transition={{ duration: 1.2, ease: 'easeOut' }}
+                  viewport={{ once: false, amount: 0.3 }}
+                />
+              </picture>
             </div>
 
             <div className="about-text mt-12">
@@ -455,24 +470,44 @@ const About = () => {
                   Me chame no <span className="color">WhatsApp</span>
                 </a>
               </div>
+
+              <div className="grid sm:grid-cols-2 gap-8 my-8 border-t border-b border-white/5 py-8">
+                <div>
+                  <h4 className="text-xs uppercase tracking-[0.2em] color font-bold mb-3">História & Missão</h4>
+                  <p className="text-xs text-muted leading-relaxed">
+                    Com mais de 5 anos de experiência no mercado digital, minha missão é democratizar o acesso a sites profissionais e de alta conversão para pequenos empreendedores, elevando o nível de sua presença online com soluções sob medida.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xs uppercase tracking-[0.2em] color font-bold mb-3">Valores & Credenciais</h4>
+                  <p className="text-xs text-muted leading-relaxed">
+                    Atuo com transparência, foco em resultados reais (conversões) e excelência técnica. Possuo certificações de SEO avançado e experiência comprovada no desenvolvimento ágil e responsivo de sistemas web integrados.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Coluna Direita: Foto Alinhada Perfeitamente (apenas Desktop) */}
           <div className="about-img hidden lg:block relative w-full h-full">
-            <img 
-              src="/about-profile.webp" 
-              alt="J. Roberto Brandt - Webdesigner e Especialista em SEO em Rio de Janeiro" 
-              className="absolute top-0 right-0 h-full w-auto max-w-none grayscale hover:grayscale-0 transition-all duration-700 brightness-110 contrast-105"
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/about-profile.webp" type="image/webp" />
+              <img 
+                src="/about-profile.png" 
+                alt="J. Roberto Brandt - Webdesigner e Especialista em SEO em Rio de Janeiro" 
+                className="absolute top-0 right-0 h-full w-auto max-w-none grayscale hover:grayscale-0 transition-all duration-700 brightness-110 contrast-105"
+                loading="lazy"
+                width="800"
+                height="1000"
+              />
+            </picture>
           </div>
         </div>
 
         <div id="services" className="mt-12 md:mt-20 mb-12 md:mb-16">
-          <div className="services-heading text-4xl font-bold mb-12 uppercase">
+          <h3 className="services-heading text-4xl font-bold mb-12 uppercase">
             Por que usar <span className="color">essas soluções?</span>
-          </div>
+          </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: 'Mais Clientes', icon: <Globe size={40} />, desc: 'Mais clientes sem depender de plataformas de terceiros.' },
@@ -501,9 +536,9 @@ const About = () => {
         </div>
 
         <div id="skills" className="mt-12 md:mt-20">
-          <div className="skills-header text-4xl font-bold mb-12 uppercase">
+          <h3 className="skills-header text-4xl font-bold mb-12 uppercase">
             Resultados para o <span className="color">seu negócio</span>
-          </div>
+          </h3>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
             {[
               { name: 'Mais clientes online', level: 95 },
@@ -585,42 +620,84 @@ const Portfolio = () => {
 
 const LGPDBanner = () => {
   const [show, setShow] = useState(false);
+  const [consent, setConsent] = useState<string | null>(null);
 
   useEffect(() => {
-    const accepted = localStorage.getItem('lgpd_accepted');
-    if (!accepted) {
+    const savedConsent = localStorage.getItem('lgpd_consent');
+    if (!savedConsent) {
       setShow(true);
+    } else {
+      setConsent(savedConsent);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('lgpd_accepted', 'true');
+    localStorage.setItem('lgpd_consent', 'accepted');
+    setConsent('accepted');
     setShow(false);
+    window.location.reload();
   };
 
-  if (!show) return null;
+  const handleReject = () => {
+    localStorage.setItem('lgpd_consent', 'rejected');
+    setConsent('rejected');
+    setShow(false);
+    window.location.reload();
+  };
+
+  const handleRevoke = () => {
+    localStorage.removeItem('lgpd_consent');
+    setConsent(null);
+    setShow(true);
+  };
 
   return (
-    <motion.div 
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="fixed bottom-0 left-0 w-full z-[5000] p-4 md:p-6"
-    >
-      <div className="max-w-7xl mx-auto bg-[#1a1a1a] border border-white/10 p-6 md:p-8 rounded-sm shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
-        <div className="text-sm text-white/70 leading-relaxed text-center md:text-left max-w-3xl">
-          <p className="uppercase tracking-widest text-[10px] mb-2 color font-bold">Privacidade & LGPD</p>
-          <p className="text-xs md:text-sm">
-            Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/politica-de-privacidade.html" target="_blank" className="color underline hover:no-underline font-bold">Política de Privacidade</a> conforme a LGPD.
-          </p>
-        </div>
-        <button 
-          onClick={handleAccept}
-          className="px-10 py-3 bg-color text-white font-bold uppercase tracking-widest text-xs hover:brightness-110 transition-all shadow-lg cursor-pointer whitespace-nowrap"
+    <>
+      <AnimatePresence>
+        {show && (
+          <motion.div 
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-0 left-0 w-full z-[5000] p-4 md:p-6"
+          >
+            <div className="max-w-7xl mx-auto bg-[#1a1a1a] border border-white/10 p-6 md:p-8 rounded-sm shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
+              <div className="text-sm text-white/70 leading-relaxed text-center md:text-left max-w-3xl">
+                <p className="uppercase tracking-widest text-[10px] mb-2 color font-bold">Privacidade & LGPD</p>
+                <p className="text-xs md:text-sm">
+                  Utilizamos cookies essenciais e tecnologias semelhantes para fornecer nossos serviços de acordo com a LGPD. Você pode aceitar ou rejeitar os cookies de análise e personalização. Leia nossa <a href="/politica-de-privacidade.html" target="_blank" className="color underline hover:no-underline font-bold">Política de Privacidade</a>.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <button 
+                  onClick={handleReject}
+                  className="px-6 py-3 border border-white/20 text-white font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition-all cursor-pointer whitespace-nowrap"
+                >
+                  Rejeitar
+                </button>
+                <button 
+                  onClick={handleAccept}
+                  className="px-10 py-3 bg-color text-white font-bold uppercase tracking-widest text-xs hover:brightness-110 transition-all shadow-lg cursor-pointer whitespace-nowrap"
+                >
+                  Aceitar
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {consent && (
+        <button
+          onClick={handleRevoke}
+          className="fixed bottom-8 left-8 z-[3000] p-3 bg-[#151515] border border-white/10 hover:border-color/50 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+          title="Gerenciar Consentimento de Cookies (LGPD)"
+          aria-label="Gerenciar Consentimento de Cookies"
         >
-          Ok, entendi
+          <Settings size={20} className="text-white/70" />
         </button>
-      </div>
-    </motion.div>
+      )}
+    </>
   );
 };
 
@@ -760,6 +837,14 @@ const FAQ = () => {
       q: "Vocês oferecem suporte após a entrega do site?", 
       a: "Sim, ofereço suporte pós-entrega para garantir que tudo funcione perfeitamente. Pequenos ajustes e correções são tratados diretamente pelo WhatsApp, de forma rápida e sem burocracia." 
     },
+    {
+      q: "Qual o prazo de indexação no Google para sites no Rio de Janeiro e São Paulo?",
+      a: "O prazo médio de indexação inicial pelo robô do Google varia entre 4 a 10 dias após o envio do sitemap no Search Console. Para negócios locais no Rio de Janeiro (como Jacarepaguá, Barra da Tijuca) ou em São Paulo, o tempo de maturação das palavras-chave locais costuma levar de 30 a 90 dias, dependendo da concorrência da região."
+    },
+    {
+      q: "Como funciona a otimização de SEO Local para atrair clientes em bairros específicos?",
+      a: "A otimização de SEO Local envolve alinhar as informações de NAP (Nome, Endereço e Telefone) do seu site com o Google Business Profile (GBP), usar marcação estruturada (Schema LocalBusiness) com a propriedade areaServed configurada, e criar páginas ou menções específicas aos bairros atendidos. Isso ajuda o Google a entender a relevância geográfica do seu negócio e mostrá-lo no mapa local."
+    }
   ];
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -965,7 +1050,7 @@ const Footer = () => {
             </address>
           </div>
           
-          <div className="grid grid-cols-2 md:col-span-2 gap-8 items-start">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:col-span-2 gap-8 items-start">
             <div className="flex flex-col items-center gap-4">
               <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Navegação</h4>
               <div className="flex flex-col items-center gap-2">
@@ -980,6 +1065,24 @@ const Footer = () => {
                     {link.name}
                   </button>
                 ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center gap-4">
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Serviços</h4>
+              <div className="flex flex-col items-center gap-2">
+                <a href="/criacao-de-sites/" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-center">Criação de Sites</a>
+                <a href="/seo/" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-center">Otimização SEO</a>
+                <a href="/landing-pages/" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-center">Landing Pages</a>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center gap-4">
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">Localidades & Blog</h4>
+              <div className="flex flex-col items-center gap-2">
+                <a href="/criacao-de-sites-rio-de-janeiro/" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-center">Rio de Janeiro</a>
+                <a href="/criacao-de-sites-sao-paulo/" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-center">São Paulo</a>
+                <a href="/blog/" className="text-muted hover:text-color transition-colors text-xs uppercase tracking-widest text-center font-bold">Nosso Blog</a>
               </div>
             </div>
 
@@ -1022,6 +1125,30 @@ export default function App() {
       setLoading(false);
     }, 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const consent = localStorage.getItem('lgpd_consent');
+    if (consent === 'accepted') {
+      // Dynamic injection of GTM
+      const gtmScript = document.createElement('script');
+      gtmScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');`;
+      document.head.appendChild(gtmScript);
+
+      // Dynamic injection of Microsoft Clarity
+      const clarityScript = document.createElement('script');
+      clarityScript.type = 'text/javascript';
+      clarityScript.innerHTML = `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window,document,"clarity","script","CLARITY_PROJECT_ID");`;
+      document.head.appendChild(clarityScript);
+    }
   }, []);
 
   return (
