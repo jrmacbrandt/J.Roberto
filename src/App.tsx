@@ -251,19 +251,13 @@ const Navigation = ({ setActiveSection }: { setActiveSection: (s: string) => voi
 
 const Header = () => {
   const [init, setInit] = useState(false);
-  const [particlesVisible, setParticlesVisible] = useState(false);
 
   useEffect(() => {
-    // Defer particle init until after page paint to avoid blocking INP/TBT
-    const timer = setTimeout(() => {
-      initParticlesEngine(async (engine) => {
-        await loadSlim(engine);
-      }).then(() => {
-        setInit(true);
-        setParticlesVisible(true);
-      });
-    }, 1500); // defer 1.5s after mount
-    return () => clearTimeout(timer);
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
   const particlesOptions = useMemo(() => ({
@@ -286,7 +280,7 @@ const Header = () => {
 
   return (
     <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 md:pt-28 pb-12 md:pb-16">
-      {init && particlesVisible && (
+      {init && (
         <Particles
           id="tsparticles"
           options={particlesOptions}
@@ -313,11 +307,10 @@ const Header = () => {
                 <source srcSet="/profile.webp" type="image/webp" />
                 <img 
                   src="/profile.png" 
-                  alt="J. Roberto Brandt - Webdesigner no Rio de Janeiro" 
+                  alt="J. Roberto Brandt" 
                   className="w-full h-auto object-cover object-top grayscale"
                   width="800"
                   height="1000"
-                  fetchPriority="high"
                 />
               </picture>
             </div>
@@ -373,11 +366,10 @@ const Header = () => {
           <source srcSet="/profile.webp" type="image/webp" />
           <img 
             src="/profile.png" 
-            alt="J. Roberto Brandt - Webdesigner no Rio de Janeiro" 
+            alt="J. Roberto Brandt" 
             className="w-full h-auto object-cover object-top grayscale opacity-80"
             width="800"
             height="1000"
-            fetchPriority="high"
           />
         </picture>
       </div>
@@ -709,20 +701,6 @@ const LGPDBanner = () => {
   );
 };
 
-// Inline avatar component to avoid external image requests
-const AvatarInitials = ({ name }: { name: string }) => {
-  const initials = name.split(' ').slice(0, 2).map(n => n[0]).join('');
-  return (
-    <div
-      className="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold bg-[#1a1a1a] border border-white/10"
-      style={{ color: '#ff0000' }}
-      aria-hidden="true"
-    >
-      {initials}
-    </div>
-  );
-};
-
 const Testimonials = () => {
   const testimonials = [
     {
@@ -730,30 +708,35 @@ const Testimonials = () => {
       role: 'Corretora de Imóveis — Rio de Janeiro, RJ',
       stars: 4,
       text: 'O J. Roberto criou o site do meu escritório de corretagem e em menos de dois meses já estava recebendo leads pelo Google sem pagar anúncios. Atencioso, pontual e entregou além do combinado.',
+      avatar: 'https://ui-avatars.com/api/?name=Ana+Paula+Souza&background=1a1a1a&color=ff0000&size=80&bold=true&font-size=0.4',
     },
     {
       name: 'Marcos Ferreira',
       role: 'Proprietário de Barbearia — Rio de Janeiro, RJ',
       stars: 5,
       text: 'O sistema de agendamento mudou completamente meu salão. Os clientes agendam online, recebo no WhatsApp e acabou a bagunça do caderninho. Superou todas as expectativas e o suporte é excelente.',
+      avatar: 'https://ui-avatars.com/api/?name=Marcos+Ferreira&background=1a1a1a&color=ff0000&size=80&bold=true&font-size=0.4',
     },
     {
       name: 'Claudia Oliveira',
       role: 'Empreendedora Digital — São Paulo, SP',
       stars: 4,
       text: 'A landing page para minha loja de artes gospel converteu muito mais do que eu esperava. Ele entende de design E de conversão — combinação rara. Entregou antes do prazo e ficou melhor do que imaginei.',
+      avatar: 'https://ui-avatars.com/api/?name=Claudia+Oliveira&background=1a1a1a&color=ff0000&size=80&bold=true&font-size=0.4',
     },
     {
       name: 'Pedro Henrique Costa',
       role: 'Empresa de Poços Artesianos — Rio de Janeiro, RJ',
       stars: 4,
       text: 'Minha empresa estava invisível no Google. Com o site novo e o SEO, hoje apareço nas primeiras posições para clientes do RJ. O retorno sobre o investimento veio rápido e o processo foi tranquilo do início ao fim.',
+      avatar: 'https://ui-avatars.com/api/?name=Pedro+Henrique&background=1a1a1a&color=ff0000&size=80&bold=true&font-size=0.4',
     },
     {
       name: 'Renata Lima',
       role: 'Coach e Consultora — Rio de Janeiro, RJ',
       stars: 5,
       text: 'Excelente trabalho em todos os aspectos. Meu site ficou lindo, profissional e o mais importante: já está trazendo novos clientes pelo Google. É um investimento que se paga rapidamente. Recomendo sem hesitar!',
+      avatar: 'https://ui-avatars.com/api/?name=Renata+Lima&background=1a1a1a&color=ff0000&size=80&bold=true&font-size=0.4',
     },
   ];
 
@@ -785,7 +768,14 @@ const Testimonials = () => {
               </div>
               <p className="text-muted text-sm leading-relaxed flex-1">"{t.text}"</p>
               <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-                <AvatarInitials name={t.name} />
+                <img
+                  src={t.avatar}
+                  alt={`Foto de ${t.name}`}
+                  className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                  loading="lazy"
+                  width={48}
+                  height={48}
+                />
                 <div>
                   <p className="text-sm font-bold uppercase tracking-wider">{t.name}</p>
                   <p className="text-[10px] color uppercase tracking-widest mt-0.5 leading-relaxed">{t.role}</p>
@@ -1125,7 +1115,17 @@ const Footer = () => {
 // --- Main App ---
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    console.log("App mounted, starting loader...");
+    const timer = setTimeout(() => {
+      console.log("Loading complete, showing main content.");
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const consent = localStorage.getItem('lgpd_consent');
@@ -1153,33 +1153,58 @@ export default function App() {
 
   return (
     <div id="all" className="font-sans selection:bg-color selection:text-white bg-[#0a0a0a] min-h-screen">
-      <ColorChanger />
-      <Navigation setActiveSection={setActiveSection} />
-      
-      <main id="main">
-        <Header />
-        <About />
-        <Portfolio />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-      </main>
+      {loading ? (
+        <div id="loader" className="flex flex-col items-center justify-center bg-black text-white px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center gap-1"
+          >
+            <img src="/favicon-source.webp" alt="Favicon" className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full object-contain" />
+            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo" className="h-16 md:h-24 w-auto object-contain" />
+            <div className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase">
+              <span className="color">web</span>designer
+            </div>
+          </motion.div>
+        </div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
 
-      {/* Botão WhatsApp Fixo e Flutuante */}
-      <a
-        href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Fale comigo no WhatsApp"
-        className="fixed bottom-8 right-8 z-[3000] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow"
-      >
-        <svg viewBox="0 0 24 24" className="w-9 h-9 fill-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-      </a>
+          <ColorChanger />
+          <Navigation setActiveSection={setActiveSection} />
+          
+          <main>
+            <Header />
+            <About />
+            <Portfolio />
+            <Testimonials />
+            <FAQ />
+            <Contact />
+          </main>
 
-      <Footer />
-      <LGPDBanner />
+          {/* Botão WhatsApp Fixo e Flutuante */}
+          <a
+            href="https://wa.me/5521980914107?text=Oi,%20vim%20pelo%20site%20e%20quero%20mais%20clientes"
+            target="_blank"
+            rel="noreferrer"
+            className="fixed bottom-8 right-8 z-[3000] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow"
+          >
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+              alt="WhatsApp" 
+              className="w-10 h-10 invert-0"
+            />
+          </a>
+
+          <Footer />
+          <LGPDBanner />
+        </motion.div>
+      )}
     </div>
   );
 }
