@@ -1005,7 +1005,7 @@ const Contact = () => {
             <div className="overflow-hidden rounded-sm border border-white/10">
               <iframe
                 title="Localização J. Roberto Brandt - Webdesigner no Google Maps"
-                src="https://maps.google.com/maps?q=R.+Araguaia,+1111+-+Freguesia+(Jacarepagu%C3%A1),+Rio+de+Janeiro+-+RJ,+22745-271&output=embed&hl=pt-BR"
+                src="https://maps.google.com/maps?q=-22.9348301,-43.3373803&z=16&output=embed&hl=pt-BR"
                 width="100%"
                 height="220"
                 style={{ border: 0, display: 'block' }}
