@@ -276,7 +276,67 @@
             color: var(--text-muted);
             letter-spacing: 0.1em;
         }
-    </style>
+    
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .back-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--bg-card, #151515);
+            border: 1px solid var(--border, rgba(255, 255, 255, 0.05));
+            color: var(--text-light, #ffffff);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            border-color: var(--primary, #ff0000);
+            color: var(--primary, #ff0000);
+        }
+        .back-button svg {
+            width: 18px;
+            height: 18px;
+        }
+        .breadcrumb nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .breadcrumb nav ol li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .breadcrumb nav ol li:not(:last-child)::after {
+            content: "/";
+            color: var(--text-muted, #a0a0a0);
+        }
+        .breadcrumb nav a {
+            color: var(--text-muted, #a0a0a0);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb nav a:hover {
+            color: var(--primary, #ff0000);
+        }
+        .breadcrumb nav span {
+            color: var(--primary, #ff0000);
+            font-weight: 600;
+        }
+</style>
     <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
     {
@@ -350,6 +410,21 @@
     </header>
 
     <main id="main-content" class="container">
+
+    <div class="breadcrumb">
+        <a href="javascript:history.back()" class="back-button" aria-label="Voltar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+        <nav aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li><li><span aria-current="page">Otimização SEO</span></li>
+            </ol>
+        </nav>
+    </div>
+    
         <section class="hero">
             <h1>Otimização de <span>SEO Profissional</span></h1>
             <p class="hero-desc">
