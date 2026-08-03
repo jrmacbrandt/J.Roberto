@@ -986,11 +986,11 @@ const Contact = () => {
               {/* NAP — idêntico ao Google Business Profile */}
               <address className="not-italic grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
                 {[
-                  { icon: <User className="color" />, label: 'Nome', value: 'J. Roberto Brandt - Webdesigner' },
-                  { icon: <MapPin className="color" />, label: 'Endereço', value: 'R. Araguaia, 1111 — Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22745-271' },
+                  { icon: <User className="color" />, label: 'Nome', value: 'Jrbrandt Webdesigner - Atendimento Online sob agendamento' },
+                  { icon: <MapPin className="color" />, label: 'Endereço', value: 'R. Araguaia, 1111 — Freguesia (Jacarepaguá), Rio de Janeiro - RJ, CEP: 22745-271' },
                   { icon: <Phone className="color" />, label: 'Telefone/WhatsApp', value: '+55 21 98091-4107' },
                   { icon: <Mail className="color" />, label: 'E-mail', value: 'jrmacbrandt@yahoo.com' },
-                  { icon: <Clock className="color" />, label: 'Horário de Atendimento', value: 'Segunda a Sexta: 9h às 18h' },
+                  { icon: <Clock className="color" />, label: 'Horário de Atendimento', value: 'Segunda a Sexta: 9h às 18h (sob agendamento)' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 p-5 bg-[#151515] rounded-sm border border-white/5 hover:border-color/30 transition-colors group">
                     <div className="p-3 bg-black rounded-sm group-hover:scale-110 transition-transform duration-300 flex-shrink-0">{item.icon}</div>
@@ -1009,7 +1009,7 @@ const Contact = () => {
             {/* Google Maps — Place ID: ChIJJcdH8CTYmwARG4kS7rFpSKM */}
             <div className="overflow-hidden rounded-sm border border-white/10">
               <iframe
-                title="Localização J. Roberto Brandt - Webdesigner no Google Maps"
+                title="Localização Jrbrandt Webdesigner no Google Maps"
                 src="https://maps.google.com/maps?q=-22.9348301,-43.3373803&z=16&output=embed&hl=pt-BR"
                 width="100%"
                 height="220"
@@ -1017,7 +1017,7 @@ const Contact = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                aria-label="Mapa da localização de J. Roberto Brandt - Webdesigner em Jacarepaguá, Rio de Janeiro"
+                aria-label="Mapa da localização de Jrbrandt Webdesigner em Jacarepaguá, Rio de Janeiro"
               />
             </div>
 
@@ -1041,15 +1041,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center">
           <div className="flex flex-col items-center gap-1">
-            <img src="/favicon-source.webp" alt="J. Roberto Brandt - Webdesigner" className="w-[90px] h-[90px] rounded-full object-contain" loading="lazy" />
-            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo J. Roberto Brandt" className="h-12 w-auto object-contain" loading="lazy" />
+            <img src="/favicon-source.webp" alt="Jrbrandt Webdesigner" className="w-[90px] h-[90px] rounded-full object-contain" loading="lazy" />
+            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo Jrbrandt Webdesigner" className="h-12 w-auto object-contain" loading="lazy" />
             <div className="text-lg font-bold tracking-widest uppercase">
               <span className="color">web</span>designer
             </div>
             {/* NAP no rodapé — idêntico ao GBP */}
             <address className="not-italic mt-3 text-[10px] text-muted leading-relaxed text-center">
+              <span className="block font-semibold">Jrbrandt Webdesigner - Atendimento Online sob agendamento</span>
               <span className="block">R. Araguaia, 1111 — Freguesia (Jacarepaguá)</span>
-              <span className="block">Rio de Janeiro - RJ, 22745-271</span>
+              <span className="block">Rio de Janeiro - RJ, CEP: 22745-271</span>
               <a href="tel:+5521980914107" className="block mt-1 hover:text-color transition-colors">+55 21 98091-4107</a>
               <a href="mailto:jrmacbrandt@yahoo.com" className="block lowercase hover:text-color transition-colors">jrmacbrandt@yahoo.com</a>
             </address>
