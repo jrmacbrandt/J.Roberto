@@ -398,7 +398,7 @@ const About = () => {
         <div className="flex flex-wrap justify-center items-center gap-8 mb-10 border-b border-white/5 pb-12">
           {/* Logo / Favicon */}
           <div className="flex items-center justify-center hover:scale-110 transition-transform p-2 bg-white/5 rounded-full backdrop-blur-sm">
-            <img src="/favicon-source.webp" alt="J. Roberto Brandt" className="w-10 h-10 rounded-full object-contain" />
+            <img src="/Jrbrandt%20Webdesigner.webp" alt="J. Roberto Brandt" className="w-10 h-10 rounded-full object-contain" />
           </div>
           <div className="hidden md:block w-px h-12 bg-white/10"></div>
           <div className="flex gap-6">
@@ -1042,7 +1042,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center">
           <div className="flex flex-col items-center gap-1">
             <img src="/Jrbrandt%20Webdesigner.webp" alt="Jrbrandt Webdesigner" className="w-[90px] h-[90px] rounded-full object-contain" loading="lazy" />
-            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo Jrbrandt Webdesigner" className="h-12 w-auto object-contain" loading="lazy" />
+            <img src="/Assinatura%20Jrbrandt%20Webdesigner.webp" alt="Logo Jrbrandt Webdesigner" className="h-12 w-auto object-contain" loading="lazy" />
             <div className="text-lg font-bold tracking-widest uppercase">
               <span className="color">web</span>designer
             </div>
@@ -1165,8 +1165,8 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center gap-1"
           >
-            <img src="/favicon-source.webp" alt="J. Roberto Brandt - Webdesigner" className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full object-contain" width="150" height="150" />
-            <img src="/jrbrandt-assinatura-bg.webp" alt="Logo J. Roberto Brandt" className="h-16 md:h-24 w-auto object-contain" width="300" height="96" />
+            <img src="/Jrbrandt%20Webdesigner.webp" alt="J. Roberto Brandt - Webdesigner" className="w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full object-contain" width="150" height="150" />
+            <img src="/Assinatura%20Jrbrandt%20Webdesigner.webp" alt="Logo J. Roberto Brandt" className="h-16 md:h-24 w-auto object-contain" width="300" height="96" />
             <div className="text-xl md:text-2xl font-bold tracking-[0.3em] uppercase">
               <span className="color">web</span>designer
             </div>
