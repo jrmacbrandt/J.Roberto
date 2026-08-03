@@ -1041,14 +1041,14 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center">
           <div className="flex flex-col items-center gap-1">
-            <img src="/favicon-source.webp" alt="Jrbrandt Webdesigner" className="w-[90px] h-[90px] rounded-full object-contain" loading="lazy" />
+            <img src="/Jrbrandt%20Webdesigner.webp" alt="Jrbrandt Webdesigner" className="w-[90px] h-[90px] rounded-full object-contain" loading="lazy" />
             <img src="/jrbrandt-assinatura-bg.webp" alt="Logo Jrbrandt Webdesigner" className="h-12 w-auto object-contain" loading="lazy" />
             <div className="text-lg font-bold tracking-widest uppercase">
               <span className="color">web</span>designer
             </div>
             {/* NAP no rodapé — idêntico ao GBP */}
             <address className="not-italic mt-3 text-[10px] text-muted leading-relaxed text-center">
-              <span className="block font-semibold">Jrbrandt Webdesigner - Atendimento Online sob agendamento</span>
+              <span className="block font-semibold">Atendimento Online sob agendamento</span>
               <span className="block">R. Araguaia, 1111 — Freguesia (Jacarepaguá)</span>
               <span className="block">Rio de Janeiro - RJ, CEP: 22745-271</span>
               <a href="tel:+5521980914107" className="block mt-1 hover:text-color transition-colors">+55 21 98091-4107</a>
